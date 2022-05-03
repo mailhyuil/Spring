@@ -18,6 +18,6 @@ public class StudentVO {
 	private String stName; // 이름
 	private int intGrade; // 학년
 	private String stTel; // 전화번호
-	private String strAddr; // 주소
+	private String stAddr; // 주소
 	private String stDept; // 학과
 }

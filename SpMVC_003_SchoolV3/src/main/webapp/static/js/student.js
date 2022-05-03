@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const target = e.target;
       const text = target.innerText;
       const cName = target.className;
-      const stNum = target.dataset.stNum;
+      const stNum = target.dataset.num;
       if (cName === "name") {
         document.location.href = `${rootPath}/student/detail?stNum=${stNum}`;
       }

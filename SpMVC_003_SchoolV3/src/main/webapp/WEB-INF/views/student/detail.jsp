@@ -18,10 +18,10 @@ table {
 th, td {
 	padding: 12px;
 	text-align: left;
+	background-color: #ddd;
 }
 
 th {
-	background-color: #ddd;
 	color: blue;
 }
 </style>

@@ -7,7 +7,7 @@
 <nav>
 	<ul>
 		<li><a href="${rootPath}/">HOME</a></li>
-		<li><a href="${rootPath}/student/list_view">학생정보</a></li>
+		<li><a href="${rootPath}/student/list">학생정보</a></li>
 		<li><a href="">성적일람표</a></li>
 		<li><a href="">로그인</a></li>
 	</ul>

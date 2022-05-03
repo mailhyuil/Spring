@@ -49,7 +49,7 @@ public class StudentDAO {
 				stVO.setStNum(rs.getString(DBContract.ST_COL.ST_NUM));
 				stVO.setStName(rs.getString(DBContract.ST_COL.ST_NAME));
 				stVO.setStDept(rs.getString(DBContract.ST_COL.ST_DEPT));
-				stVO.setStrAddr(rs.getString(DBContract.ST_COL.ST_ADDR));
+				stVO.setStAddr(rs.getString(DBContract.ST_COL.ST_ADDR));
 				stVO.setStTel(rs.getString(DBContract.ST_COL.ST_TEL));
 				stVO.setIntGrade(rs.getInt(DBContract.ST_COL.ST_GRADE));	
 				
@@ -82,7 +82,7 @@ public class StudentDAO {
 			stVO.setStNum(rs.getString(DBContract.ST_COL.ST_NUM));
 			stVO.setStName(rs.getString(DBContract.ST_COL.ST_NAME));
 			stVO.setStDept(rs.getString(DBContract.ST_COL.ST_DEPT));
-			stVO.setStrAddr(rs.getString(DBContract.ST_COL.ST_ADDR));
+			stVO.setStAddr(rs.getString(DBContract.ST_COL.ST_ADDR));
 			stVO.setStTel(rs.getString(DBContract.ST_COL.ST_TEL));
 			stVO.setIntGrade(rs.getInt(DBContract.ST_COL.ST_GRADE));
 			
