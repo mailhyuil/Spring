@@ -86,6 +86,10 @@
 			<artifactId>logback-classic</artifactId>
 			<version>1.2.11</version>
 		</dependency>
+<<<<<<< HEAD
+=======
+
+>>>>>>> ae373ae3259e4071ff920c5231ee0ea91045b5e1
 		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>

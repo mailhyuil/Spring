@@ -38,9 +38,9 @@ public class AddrEx02 {
 		int size = list.size();
 		
 		for (int i = 0; i < size-1; i++) {
-			AddressVO temp = null;
 			for (int j = 1; j < size; j++) {
 				if(list.get(i).getAge() > list.get(j).getAge()) {
+					AddressVO temp = null;
 					temp = list.get(i);
 					list.set(i, list.get(j));
 					list.set(j, temp);
