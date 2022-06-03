@@ -68,7 +68,6 @@ document.addEventListener("DOMContentLoaded", () => {
           return res.text();
         })
         .then((result) => {
-          console.log(result);
           if (result === "ok") {
             username_msg.classList.remove("warn");
             username_msg.classList.add("ok");
