@@ -7,6 +7,21 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+<<<<<<< HEAD
+@Getter
+@Setter
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class StudentVO {
+	private String st_num;
+	private String st_name;
+	private String st_dept;
+	private int st_grade;
+	private String st_tel;
+	private String st_addr;
+=======
 @Setter
 @Getter
 @AllArgsConstructor
@@ -20,4 +35,5 @@ private String st_dept;
 private int st_grade;
 private String st_tel;
 private String st_addr;
+>>>>>>> ae373ae3259e4071ff920c5231ee0ea91045b5e1
 }

@@ -19,14 +19,21 @@ import lombok.extern.slf4j.Slf4j;
 @RequestMapping(value="/books")
 public class BooksController {
 	
+<<<<<<< HEAD
 	@Qualifier(QualifierConfig.SERVICE.BOOKS_V1) 
 	private final BookService bookService;
 
 	public BooksController(BookService bookService) {
+=======
+	private final BookService bookService;
+	
+	public BooksController(@Qualifier(QualifierConfig.SERVICE.BOOKS_V1) BookService bookService) {
+>>>>>>> 40232efce16720ffa9fdbf8d34237af595e50278
 		this.bookService = bookService;
 	}
 	
 	
+<<<<<<< HEAD
 	@RequestMapping(value={"/",""}  )
 	public String home() {
 		/*
@@ -80,4 +87,26 @@ public class BooksController {
 		return null;
 	}
 	
+=======
+	@RequestMapping(value={"","/"}, method=RequestMethod.GET)
+	public String home(Model model) {
+		List<BookVO> bookList = bookService.selectAll();
+		System.out.println("=".repeat(100));
+		System.out.println(bookList);
+		System.out.println("=".repeat(100));
+		model.addAttribute("BOOKS", bookList);
+		return "/books/book_list";
+	}
+	
+	@RequestMapping(value="/insert", method=RequestMethod.GET)
+	public String insert() {
+		return "books/book_insert";
+	}
+	
+	@RequestMapping(value="/insert", method=RequestMethod.POST)
+	public String insert(BookVO bookVO) {
+		bookService.insert(bookVO);
+		return "books/book_insert";
+	}
+>>>>>>> 40232efce16720ffa9fdbf8d34237af595e50278
 }

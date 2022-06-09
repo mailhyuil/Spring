@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @charset "UTF-8";
 form {
 	width: 60vw;
@@ -20,3 +21,25 @@ input, textarea, button {
 	margin:5px;
 }
 
+=======
+form{
+	width:60vw;
+	margin:30px auto;
+
+}
+
+form div{
+	display:flex;
+	justify-content: space-between;
+
+}
+
+form input{
+	flex:1;
+}
+
+input, textarea, button{
+	letter-spacing:-0.2px;
+	font-size:1rem;		
+}
+>>>>>>> 40232efce16720ffa9fdbf8d34237af595e50278

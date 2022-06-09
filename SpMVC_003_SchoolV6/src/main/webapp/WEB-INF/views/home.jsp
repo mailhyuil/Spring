@@ -15,9 +15,18 @@
 	box-sizing: border-box;
 }
 
+<<<<<<< HEAD
+html, body {
+	width: 100vw;
+	height: 100vh;
+}
+
+body {
+=======
 body {
 	width: 100vw;
 	height: 100vh;
+>>>>>>> ae373ae3259e4071ff920c5231ee0ea91045b5e1
 	display: flex;
 	flex-direction: column;
 }
@@ -78,9 +87,15 @@ section.main {
 }
 
 section.main article {
+<<<<<<< HEAD
+	flex: 1; margin : 0 5px;
+	border: 1px solid blue;
+	margin: 0 5px;
+=======
 	flex: 1;
 	margin: 0 5px;
 	border: 1px solid blue;
+>>>>>>> ae373ae3259e4071ff920c5231ee0ea91045b5e1
 }
 
 footer {
@@ -96,29 +111,63 @@ button {
 	padding: 12px 16px;
 	border-radius: 5px;
 }
+<<<<<<< HEAD
+
+button:hover {
+	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
+=======
 button:hover {
 	box-shadow: 2px 2px 2px rgba(0,0,0,0.7);
+>>>>>>> ae373ae3259e4071ff920c5231ee0ea91045b5e1
 }
 
 button.btn-blue {
 	background-color: blue;
 	color: white;
 }
+<<<<<<< HEAD
+
+=======
+>>>>>>> ae373ae3259e4071ff920c5231ee0ea91045b5e1
 button.btn-green {
 	background-color: green;
 	color: white;
 }
+<<<<<<< HEAD
+
+=======
+>>>>>>> ae373ae3259e4071ff920c5231ee0ea91045b5e1
 button.btn-red {
 	background-color: red;
 	color: white;
 }
+<<<<<<< HEAD
+
+=======
+>>>>>>> ae373ae3259e4071ff920c5231ee0ea91045b5e1
 button.btn-orange {
 	background-color: orange;
 	color: white;
 }
+<<<<<<< HEAD
 article.st-list{
 	overflow:auto;
 }
+=======
+
+<<<<<<< HEAD
+article.st-list {
+	overflow: hidden;
+	max-height: 65vh;
+}
+=======
+
+
+
+
+
+>>>>>>> ae373ae3259e4071ff920c5231ee0ea91045b5e1
+>>>>>>> 40232efce16720ffa9fdbf8d34237af595e50278
 </style>
 <script>
 	// jsp 의 속성(변수)값을 JS 로 보내기 위해
@@ -161,9 +210,19 @@ article.st-list{
 				</article>
 			</c:when>
 			<c:otherwise>
+<<<<<<< HEAD
 				<article class="st-list">
 				<%@include file="/WEB-INF/views/student/list.jsp" %>
 				</article>
+=======
+<<<<<<< HEAD
+				<article class="st-list">
+					<%@ include file="/WEB-INF/views/student/list.jsp"%>
+				</article>
+=======
+				<article></article>
+>>>>>>> ae373ae3259e4071ff920c5231ee0ea91045b5e1
+>>>>>>> 40232efce16720ffa9fdbf8d34237af595e50278
 				<article></article>
 				<article></article>
 			</c:otherwise>

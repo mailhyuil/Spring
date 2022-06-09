@@ -1,5 +1,9 @@
 Manifest-Version: 1.0
+<<<<<<< HEAD
+Built-By: KS50519
+=======
 Built-By: sangb
+>>>>>>> ae373ae3259e4071ff920c5231ee0ea91045b5e1
 Build-Jdk: 11.0.13
 Created-By: Maven Integration for Eclipse
 

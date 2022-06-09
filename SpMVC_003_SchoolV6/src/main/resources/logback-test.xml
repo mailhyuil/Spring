@@ -2,15 +2,30 @@
 <configuration>
 	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
 		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+<<<<<<< HEAD
+=======
+			<charset>UTF-8</charset>
+>>>>>>> 40232efce16720ffa9fdbf8d34237af595e50278
 			<Pattern>[%-5level] %c{5} - %msg%n</Pattern>
 		</encoder>
 	</appender>
 	
+<<<<<<< HEAD
 	<logger name="com.callor.school.controller" level="DEBUG" additivity="false">
+=======
+	<logger name="com.callor.school.controller" 
+			level="DEBUG" additivity="false">
+>>>>>>> 40232efce16720ffa9fdbf8d34237af595e50278
 		<appender-ref ref="STDOUT"/>
 	</logger>
 	
 	<root level="WARN">
+<<<<<<< HEAD
 		<appender-ref ref="STDOUT" />
 	</root>
+=======
+		<appender-ref ref="STDOUT"/>
+	</root>
+	
+>>>>>>> 40232efce16720ffa9fdbf8d34237af595e50278
 </configuration>

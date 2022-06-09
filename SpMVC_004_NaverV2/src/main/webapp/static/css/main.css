@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 @charset "UTF-8";
+=======
+
+>>>>>>> 40232efce16720ffa9fdbf8d34237af595e50278
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -17,6 +21,17 @@ body {
 	flex-direction: column;
 }
 
+<<<<<<< HEAD
 section.main {
 	flex: 1;
 }
+=======
+section {
+	flex: 1;
+}
+
+header {
+	font-size: 30px;
+	font-weight: bold;
+}
+>>>>>>> 40232efce16720ffa9fdbf8d34237af595e50278

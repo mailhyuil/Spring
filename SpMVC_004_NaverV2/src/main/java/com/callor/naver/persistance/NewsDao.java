@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.callor.naver.model.NewsVO;
 
+<<<<<<< HEAD
 public interface NewsDao extends GenericDao<NewsVO, String>{
 
 	/*
@@ -21,4 +22,9 @@ public interface NewsDao extends GenericDao<NewsVO, String>{
 
 	
 	
+=======
+public interface NewsDao extends GenericDao<NewsVO, String> {
+
+	public List<NewsVO> findByTitle(String title);
+>>>>>>> 40232efce16720ffa9fdbf8d34237af595e50278
 }

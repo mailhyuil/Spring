@@ -2,6 +2,7 @@ package com.callor.naver.service;
 
 import com.callor.naver.persistance.NewsDao;
 
+<<<<<<< HEAD
 /*
  * Service 의 기능도 기본적으로 Dao 와 같이 5가지 CRUD 가 필요하고
  * 경우에 따라 별도의 method 가 추가될 수 있다
@@ -19,3 +20,8 @@ public interface NewsService extends NewsDao{
 
 
 
+=======
+public interface NewsService extends NewsDao{
+	
+}
+>>>>>>> 40232efce16720ffa9fdbf8d34237af595e50278

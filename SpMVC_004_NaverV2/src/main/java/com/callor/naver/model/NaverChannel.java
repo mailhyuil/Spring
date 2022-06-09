@@ -8,6 +8,7 @@ import lombok.ToString;
 
 @ToString
 @JacksonXmlRootElement(localName = "rss")
+<<<<<<< HEAD
 /*
  * xml 파일을 parsing 하여 객체에 담을때
  * xml tag 에는 있는데 클래스에 변수가 선언되지 않았을때
@@ -25,4 +26,13 @@ public class NaverChannel {
 	@JacksonXmlProperty(localName = "channel")
 	public NaverXMLParent channel;
 
+=======
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class NaverChannel {
+
+//	public String version;
+
+	@JacksonXmlProperty(localName = "channel")
+	public NaverXMLParent channel;
+>>>>>>> 40232efce16720ffa9fdbf8d34237af595e50278
 }

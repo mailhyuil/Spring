@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.callor.naver.model.BookVO;
 
+<<<<<<< HEAD
 public interface BookDao extends GenericDao<BookVO, String>{
 
 	/*
@@ -20,4 +21,13 @@ public interface BookDao extends GenericDao<BookVO, String>{
 	public List<BookVO> findByPrice(int price);
 	
 	
+=======
+public interface BookDao extends GenericDao<BookVO, String> {
+	
+	public List<BookVO> findByTitle(String title);
+	public List<BookVO> findByAuthor(String author);
+	public List<BookVO> findByPublisher(String publisher);
+	
+	public List<BookVO> findByPrice(int price);
+>>>>>>> 40232efce16720ffa9fdbf8d34237af595e50278
 }

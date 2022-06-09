@@ -25,4 +25,8 @@
 	<context:component-scan base-package="com.callor.naver.service.impl" />
 	
 	
+<<<<<<< HEAD
+=======
+	
+>>>>>>> 40232efce16720ffa9fdbf8d34237af595e50278
 </beans:beans>
