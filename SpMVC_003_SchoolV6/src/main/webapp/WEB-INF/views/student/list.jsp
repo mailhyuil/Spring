@@ -24,10 +24,16 @@ div.btn-box {
 	<tr>
 		<th>학번</th>
 		<th>이름</th>
-		<th>학과</th>
-		<th>학년</th>
 		<th>전화번호</th>
 	</tr>
+	<c:forEach items="${ST_LIST}" var="ST">
+	<tr>
+		<th>${ST.st_num}</th>
+		<th>${ST.st_name}</th>
+		<th>${ST.st_tel}</th>
+	</tr>
+	</c:forEach>
+
 </table>
 <div class="btn-box">
 	<button class="btn-green std-input">학생정보 등록</button>

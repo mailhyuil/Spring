@@ -1,6 +1,11 @@
 package com.sb.todo.service.impl;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -11,12 +16,16 @@ import com.sb.todo.service.TodoService;
 
 public class TodoServiceImpl implements TodoService {
 
-	List<TodoVO> todoList;
-
+	protected List<TodoVO>todoList;
+	protected String saveFileName;
+	
 	public TodoServiceImpl() {
 		todoList = new ArrayList();
+		saveFileName = "src/com/sb/todo/model/hello.txt";
 	}
-
+	
+	
+	
 	@Override
 	public void todoInsert(String content) {
 		Date curDate = new Date(System.currentTimeMillis());
@@ -50,10 +59,6 @@ public class TodoServiceImpl implements TodoService {
 	public void findByKey(String key) {
 	}
 
-	@Override
-	public void update(TodoVO tVO) {
-	}
-
 	/*
 	 * 매개변수로 전달받은 num 값을 List요소의 실제값보다 1만큼 크다 num 값이 4라면 실제로 3번 요소를 선택한 것이다.
 	 * 
@@ -63,22 +68,52 @@ public class TodoServiceImpl implements TodoService {
 	public void compTodo(Integer num) {
 		
 		Integer compNum = num -1;
-		
-		Date curDate = new Date(System.currentTimeMillis());
 
-		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-		SimpleDateFormat timeFormat = new SimpleDateFormat("hh-mm-ss");
+		LocalDateTime local = LocalDateTime.now();
+		DateTimeFormatter toDateFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		DateTimeFormatter toTimeFormat = DateTimeFormatter.ofPattern("hh-mm-ss");
 		
-		String today = dateFormat.format(curDate);
-		String time = timeFormat.format(curDate);
+		String eDate = local.format(toDateFormat);
+		String eTime = local.format(toTimeFormat);
+		try {
+			TodoVO tVO = todoList.get(compNum);
+			
+			eDate = tVO.getEdate() == null || tVO.getEdate().isEmpty() ? eDate : null;
+			eTime = tVO.getEdate() == null || tVO.getEtime().isEmpty() ? eTime : null;
+			
+			tVO.setEdate(eDate);
+			tVO.setEtime(eTime);
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println("todoList 데이터 범위를 벗어났습니닼");
+		}
 		
-		todoList.get(compNum).setEdate(today);
-		todoList.get(compNum).setEtime(time);
 		
 	}
 
 	@Override
-	public void saveTodo(String fileName) {
+	public void saveTodo(String fileName) throws IOException {
+		FileWriter writer = null;
+		PrintWriter out = null;
+		
+		writer = new FileWriter(saveFileName);
+		out = new PrintWriter(writer);
+		
+		for(TodoVO vo : todoList) {
+			out.printf("%s,", vo.getTKey());
+			out.printf("%s,", vo.getSdate());
+			out.printf("%s,", vo.getStime());
+			out.printf("%s,", vo.getEdate());
+			out.printf("%s,", vo.getEtime());
+			out.printf("%s\n", vo.getTContent());
+		}
+		out.close();
+		writer.close();
+	}
+
+	@Override
+	public void update(Integer num, String content) {
+		
 	}
 
 }
