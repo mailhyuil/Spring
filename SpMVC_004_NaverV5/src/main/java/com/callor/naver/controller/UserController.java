@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.callor.naver.config.QualifierConfig;
 import com.callor.naver.model.UserVO;
@@ -33,19 +34,11 @@ public class UserController {
 	}
 
 	@RequestMapping(value = "/join", method = RequestMethod.POST)
-	public String join(UserVO userVO, Model model) {
+	public String join(UserVO userVO, Model model, String email) {
 
 		log.debug("회원정보 : {}", userVO.toString());
-
-		int result = userService.join(userVO);
-		if (result == 1) {
-			model.addAttribute("error", "EMAIL_DUPLICATED");
-			return "redirect:/user/join";
-		} else if (result == 2) {
-			model.addAttribute("error", "USERNAME_DUPLICATED");
-			return "redirect:/user/join";
-		}
-
+		userService.join(userVO);
+		
 		return "redirect:/user/login";
 	}
 
@@ -105,6 +98,15 @@ public class UserController {
 		}
 		model.addAttribute("LAYOUT", "MYPAGE");
 		return "home";
+	}
+	
+	@ResponseBody
+	@RequestMapping(value = "/email_check", method = RequestMethod.GET)
+	public String email_check(String email) {
+		UserVO userVO = userService.findByEmail("mailhyuil@gmail.com");
+		System.out.println(userVO);
+		if(userVO != null) return "USED";
+		return "USABLE";
 	}
 
 }

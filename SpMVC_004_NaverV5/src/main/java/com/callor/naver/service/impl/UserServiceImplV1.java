@@ -54,8 +54,7 @@ public class UserServiceImplV1 implements UserService{
 
 	@Override
 	public UserVO findByEmail(String email) {
-		userDao.findByEmail(email);
-		return null;
+		return userDao.findByEmail(email);
 	}
 
 	@Override

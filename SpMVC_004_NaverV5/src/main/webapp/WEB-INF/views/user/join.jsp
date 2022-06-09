@@ -22,7 +22,10 @@
 		margin:5px;
 	}
 </style>
-<script src="${rootPath}/static/js/join.js?20220609005"></script>
+<script>
+	const rootpath = "${rootPath}"
+</script>
+<script src="${rootPath}/static/js/join.js?20220432344325"></script>
 </head>
 <body>
 
@@ -32,9 +35,7 @@
 	
 	<label class="w3-text-blue">User Name(ID)</label>
 	<input name="username" id="username" placeholder="USERNAME" class="w3-input w3-border">
-	<c:if test="${error == 'USERNAME_DUPLICATED'}">
-		<div class="w3-red w3-padding-16">중복된 아이디가 있습니다</div>
-	</c:if>
+
 	<label class="w3-text-blue">비밀번호</label>
 	<input name="password" id="password" placeholder="PASSWORD" class="w3-input w3-border">
 	
@@ -43,9 +44,7 @@
 	
 	<label class="w3-text-blue">이메일</label>
 	<input name="email" id="email" placeholder="EMAIL" class="w3-input w3-border">
-	<c:if test="${error == 'EMAIL_DUPLICATED'}">
-		<div class="w3-red w3-padding-16">중복된 이메일이 있습니다</div>
-	</c:if>
+
 	<label class="w3-text-blue">실명</label>
 	<input name="name" id="name" placeholder="NAME" class="w3-input w3-border">
 	

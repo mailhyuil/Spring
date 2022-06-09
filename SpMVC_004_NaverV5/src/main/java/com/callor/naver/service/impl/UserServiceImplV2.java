@@ -38,15 +38,6 @@ public class UserServiceImplV2 extends UserServiceImplV1{
 			userVO.setRole("GUEST");
 		}
 		
-		UserVO email = userDao.findByEmail(userVO.getEmail());
-		if(email != null) {
-			return 1;
-		}
-		
-		UserVO username = userDao.findById(userVO.getUsername());
-		if(username != null) {
-			return 2;
-		}
 		// password 를 암호화 하자
 		String planPassword =  userVO.getPassword();
 		String encPassword = passwordEncoder.encode(planPassword);

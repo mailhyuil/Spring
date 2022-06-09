@@ -1,13 +1,20 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const username = document.querySelector("#username");
-  const password = document.querySelector("#password");
-  const re_password = document.querySelector("#re_password");
-  const email = document.querySelector("#email");
-  const name = document.querySelector("#name");
-  const nickname = document.querySelector("#nickname");
+
+
+
   const btn_join = document.querySelector("#btn-join");
 
-  btn_join?.addEventListener("click", () => {
+
+  btn_join?.addEventListener("click", async () => {
+
+    const username = document.querySelector("#username");
+    const password = document.querySelector("#password");
+    const re_password = document.querySelector("#re_password");
+    const email = document.querySelector("#email");
+    const name = document.querySelector("#name");
+    const nickname = document.querySelector("#nickname");
+
+
     if (username.value === "") {
       alert("USER NAME 은 반드시 입력하세요");
       username.focus();
@@ -59,11 +66,25 @@ document.addEventListener("DOMContentLoaded", () => {
     const emailRule =
       /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
 
+
+    const res = await fetch(`${rootpath}/user/email_check?email=${email.value}`);
+    const result = await res.text();
+    console.log(result);
+
+    if (result === "USED") {
+      alert("이미 등록된 이메일입니다.");
+      email.focus();
+      return false;
+    }
+
     if (!emailRule.test(email.value)) {
       alert("이메일 형식이 잘못되었습니다 다시 입력해주세요");
       email.focus();
       return false;
     }
-    document.querySelector("form.join")?.submit();
+
+    //    document.querySelector("form.join")?.submit();
   });
+
+
 });
