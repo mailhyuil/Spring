@@ -22,10 +22,7 @@
 		margin:5px;
 	}
 </style>
-<script>
-	const rootpath = "${rootPath}"
-</script>
-<script src="${rootPath}/static/js/join.js?20220432344325"></script>
+<script src="${rootPath}/static/js/join.js?20212325"></script>
 </head>
 <body>
 
@@ -54,12 +51,5 @@
 	<button class="w3-button w3-blue" id="btn-join" type="button">회원가입</button>
 
 </form>
-
-
-
-
-
-
-
 </body>
 </html>

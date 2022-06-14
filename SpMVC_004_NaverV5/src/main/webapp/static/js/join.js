@@ -67,7 +67,16 @@ document.addEventListener("DOMContentLoaded", () => {
       /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
 
 
-    const res = await fetch(`${rootpath}/user/email_check?email=${email.value}`);
+    /*     fetch(`${rootpath}/user/email_check?email=${email.value}`)
+          .then(res => res.text())
+          .then(result => {
+            if (result === "USED") {
+              alert("이미 등록된 이메일입니다.");
+              email.focus();
+              return false;
+            }
+          }) */
+    const res = await fetch(`${rootPath}/user/email_check?email=${email.value}`);
     const result = await res.text();
     console.log(result);
 
@@ -83,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return false;
     }
 
-    //    document.querySelector("form.join")?.submit();
+    document.querySelector("form.join")?.submit();
   });
 
 

@@ -157,11 +157,6 @@
         <div class="sub">-</div>
       </div>
       <img />
-      <div class="class_point">xx수학학원</div>
-      <div class="class_point">zz영어학원</div>
-      <div class="class_point">yy영어학원</div>
-      <div class="class_point">oo피아노학원</div>
-      <div class="class_point">kk태권도</div>
       <button class="toPay" onclick="location.href = '/api/pay' ">
         결제하기
       </button>
