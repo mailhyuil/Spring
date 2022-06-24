@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+
+=======
 @charset "UTF-8";
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -17,6 +21,17 @@ body {
 	flex-direction: column;
 }
 
+<<<<<<< HEAD
+section {
+	flex: 1;
+}
+
+header {
+	font-size: 30px;
+	font-weight: bold;
+}
+=======
 section.main {
 	flex: 1;
 }
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc

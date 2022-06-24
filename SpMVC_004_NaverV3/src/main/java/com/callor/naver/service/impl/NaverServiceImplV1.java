@@ -24,6 +24,16 @@ import com.callor.naver.model.NewsVO;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
+<<<<<<< HEAD
+@Service(QualifierConfig.SERVICE.Naver_V1)
+public class NaverServiceImplV1 extends NaverServiceImpl{
+
+	
+	
+	@Override
+	public List<Object> getNaver(String queryString) {
+		
+=======
 @Service(QualifierConfig.SERVICE.NAVER_V1)
 public class NaverServiceImplV1 extends NaverServiceImpl {
 	
@@ -32,11 +42,64 @@ public class NaverServiceImplV1 extends NaverServiceImpl {
 	@Override
 	public List<Object> getNaver(String queryString) {
 
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 		URI restURI = null;
 		try {
 			restURI = new URI(queryString);
 		} catch (URISyntaxException e) {
 			// TODO Auto-generated catch block
+<<<<<<< HEAD
+			log.debug("URI 문법오류"	);
+			return null;
+		}
+
+		// HTTP 프로토콜에 보안 정보를 세팅하여 
+		// NAVER로 전송할 준비
+		HttpHeaders headers = new HttpHeaders();
+		
+		headers.set(NaverConfig.HEADER.ID, NaverConfig.NAVER_CLIENT_ID);
+		headers.set(NaverConfig.HEADER.SEC, NaverConfig.NAVER_CLIENT_SEC);
+		// JSON 데이터 타입으로 받겠다
+		headers.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON)); // json데이터 안깨지게
+		// headers에 추가된 정보를 entity type의 객체로 변환하기
+		HttpEntity<String> entity = new HttpEntity<String>("parameter", headers);
+		RestTemplate restTemp = new RestTemplate();
+		
+		if(cat.equals("BOOK")) {
+			ResponseEntity<NaverParent<BookVO>> resData = null;			
+			resData = restTemp.exchange(restURI, 
+					HttpMethod.GET, 
+					entity,
+					new ParameterizedTypeReference<NaverParent<BookVO>>(){}
+			);
+			return (List<Object>)resData.getBody().items;
+		} else if(cat.equals("NEWS")) {
+			ResponseEntity<NaverParent<NewsVO>> resData = null;			
+			resData = restTemp.exchange(restURI,
+					HttpMethod.GET,
+					entity,
+					new ParameterizedTypeReference<NaverParent<NewsVO>>(){}
+			);
+			return (List<Object>)resData.getBody().items;
+		} else if(cat.equals("MOVIE")) {
+			ResponseEntity<NaverParent<MovieVO>> resData = null;			
+			resData = restTemp.exchange(restURI, 
+					HttpMethod.GET, 
+					entity,
+					new ParameterizedTypeReference<NaverParent<MovieVO>>(){}
+			);
+			return (List<Object>)resData.getBody().items;
+		}
+		
+		// Naver 에서 받은 데이터는 resData의 body에 담겨있다
+		// body 데이터를 get하여 그 데이터중에서 items만 추출하여
+		// Controller로 return 
+		return null;
+		//resData.getBody().items;
+	}
+	
+	
+=======
 			// e.printStackTrace();
 			log.debug("URI 문법오류");
 			return null;
@@ -99,4 +162,5 @@ public class NaverServiceImplV1 extends NaverServiceImpl {
 		return null; 
 	}
 
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 }

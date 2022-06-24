@@ -11,6 +11,7 @@ import java.util.TreeMap;
 import org.jasypt.encryption.pbe.StandardPBEStringEncryptor;
 
 public class MakeNaverUser {
+<<<<<<< HEAD
 	
 	public static void main(String[] args) {
 		
@@ -20,13 +21,26 @@ public class MakeNaverUser {
 		// 암호화 도구
 		StandardPBEStringEncryptor pbEnc = new StandardPBEStringEncryptor();
 		
+=======
+	public static void main(String[] args) {
+		// 키보드 입력
+		Scanner scan = new Scanner(System.in);
+		// 암호화 도구
+		StandardPBEStringEncryptor pbEnc = new StandardPBEStringEncryptor();
+>>>>>>> 6af348449b33d62cc2a7a1dd7d9e505246078509
 		// 환경변수
 		Map<String, String> envList = System.getenv();
 		
 		String saltPass = envList.get("NAVER");
+<<<<<<< HEAD
 		System.out.println("salt Pass"  + saltPass);
 		if(saltPass == null) {
 			System.out.println("NAVER 환경변수를 설정해 주세요");
+=======
+		System.out.println(saltPass);
+		if(saltPass == null) {
+			System.out.println("NAVER 환경변수를 설정해주세요");
+>>>>>>> 6af348449b33d62cc2a7a1dd7d9e505246078509
 			return;
 		}
 		pbEnc.setAlgorithm("PBEWithMD5AndDES");
@@ -34,6 +48,7 @@ public class MakeNaverUser {
 		
 		String propsDir = "./src/main/webapp/WEB-INF/spring/props";
 		
+<<<<<<< HEAD
 		Map<String, String[]> secFiles = new TreeMap<String, String[]>();
 		secFiles.put("naver.email.properties",
 				new String[] {"naver.username","naver.password"}
@@ -61,15 +76,51 @@ public class MakeNaverUser {
 				out.flush();
 				out.close();
 				
+=======
+		
+		Map<String, String[]> secFiles = new TreeMap<>();
+		
+		secFiles.put("naver.email.properties", 
+				new String[] {"naver.username", "naver.password"}
+		);
+		
+		Set<String> files = secFiles.keySet();
+		
+		for(String file:files) {
+			File propsFile = new File(propsDir, file);
+			
+			try {
+				PrintWriter out = new PrintWriter(propsFile);
+				
+				System.out.println(file);
+				String[] datas = secFiles.get(file);
+				System.out.println("-".repeat(100));
+				
+				for(String data:datas) {
+					System.out.printf("%s >> ",data);
+					String value = scan.nextLine();
+					out.printf("%s=ENC(%s)\n", data, pbEnc.encrypt(value));
+				}
+				out.close();
+				System.out.println("-".repeat(100));
+				System.out.println("File Writer OK!!!");
+>>>>>>> 6af348449b33d62cc2a7a1dd7d9e505246078509
 			} catch (FileNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			
+<<<<<<< HEAD
 			
 		}
 		
 		
 	}
 
+=======
+		}
+		
+//		System.out.println("이거 한글은 안귀엽다. 영어만 귀엽다. cute!");
+	}
+>>>>>>> 6af348449b33d62cc2a7a1dd7d9e505246078509
 }

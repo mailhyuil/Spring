@@ -25,6 +25,10 @@ public class FileServiceImplV1 implements FileUpService{
 	@Override
 	public String fileUp(MultipartFile file) throws Exception {
 		// TODO Auto-generated method stub
+<<<<<<< HEAD
+=======
+	
+>>>>>>> 6af348449b33d62cc2a7a1dd7d9e505246078509
 		// 1. file 변수에 파일관련 정보가 있는지 검사
 		// 없으면 더이상 진행하지 말라
 		if(file == null) {

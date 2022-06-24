@@ -19,7 +19,10 @@ import com.callor.naver.service.BookService;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
+<<<<<<< HEAD
+=======
 @Controller
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 @RequestMapping(value="/books")
 public class BooksController {
 	
@@ -72,12 +75,20 @@ public class BooksController {
 	 * a tag link 를 눌렀을때의 요청만 처리하도록 역할을 제한한다.
 	 */
 	@RequestMapping(value="/insert",method=RequestMethod.GET)
+<<<<<<< HEAD
+	public String insert(Model model, HttpSession session) {
+		model.addAttribute("LAYOUT","BOOK-INPUT");
+		UserVO userVO = (UserVO)session.getAttribute("USER");
+		if(userVO == null) {
+			model.addAttribute("error", "LOGIN_NEEDED");
+=======
 	public String insert(Model model,HttpSession session) {
 		model.addAttribute("LAYOUT","BOOK-INPUT");
 		
 		UserVO userVO = (UserVO) session.getAttribute("USER");
 		if(userVO == null) {
 			model.addAttribute("error","LOGIN_NEED");
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 			return "redirect:/user/login";
 		}
 		return "home";

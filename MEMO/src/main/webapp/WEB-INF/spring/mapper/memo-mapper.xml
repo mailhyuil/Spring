@@ -49,6 +49,7 @@
  	
  <!--
  	<select id="create_memo_table">
+<<<<<<< HEAD
 CREATE TABLE tbl_memo (
     m_seq NUMBER PRIMARY KEY,
     m_author VARCHAR(50) NOT NULL,	
@@ -57,6 +58,16 @@ CREATE TABLE tbl_memo (
     m_memo VARCHAR(50) NOT NULL,		
     m_image VARCHAR(125)
 )
+=======
+	 	CREATE TABLE tbl_users (
+		        username VARCHAR2(20)  PRIMARY KEY,
+		        password nVARCHAR2(125) NOT NULL,	
+		        email VARCHAR2(125)	NOT NULL UNIQUE,	
+		        name nVARCHAR2(125),	
+		        nickname nVARCHAR2(125),		
+		        role VARCHAR2(5)	
+		)
+>>>>>>> 6af348449b33d62cc2a7a1dd7d9e505246078509
  	</select>
    -->
  </mapper> 

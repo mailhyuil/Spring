@@ -7,6 +7,10 @@
 		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
 	
 	<!-- Enables the Spring MVC @Controller programming model -->
@@ -21,8 +25,18 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
+<<<<<<< HEAD
 	<context:component-scan base-package="com.callor.ems.controller" />
 	<context:component-scan base-package="com.callor.ems.service.impl" />
+=======
+<<<<<<< HEAD
+	<context:component-scan base-package="com.callor.ems.controller" />
+	<context:component-scan base-package="com.callor.ems.service.impl" />
+=======
+	<context:component-scan base-package="com.callor.ems" />
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
+	
+>>>>>>> 6af348449b33d62cc2a7a1dd7d9e505246078509
 	
 	
 </beans:beans>

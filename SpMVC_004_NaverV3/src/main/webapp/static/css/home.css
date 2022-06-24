@@ -1,3 +1,32 @@
+<<<<<<< HEAD
+/*
+home.jsp에 적용할 css
+header, nav, footer 등의 설정
+*/
+header{
+	padding:1.2rem;
+	text-align:center;
+	background-color:rgb(193, 226, 237);
+	color:rgb(47, 41, 41);
+	font-weight:900;
+	
+}
+
+nav{
+	background-color:skyblue;
+	color:white;
+}
+
+a{
+	text-decoration: none;
+	color:inherit;
+}
+
+a:active{
+	color:red;
+}
+
+=======
 @charset "UTF-8";
 /*
 	home.jsp 에 적용할 css
@@ -19,12 +48,27 @@ nav {
 	color:white;
 }
 
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 nav ul {
 	list-style: none;
 	display: flex;
 }
 
 nav li {
+<<<<<<< HEAD
+	padding:3px 16px;
+	margin:15px;
+	border-bottom: 5px solid transparent;
+	
+	font-weight:bold;
+	font-size:20px;
+	
+	transition:border 0.7s ease-out;
+}
+nav li:hover{
+	border-bottom :5px solid yellow;
+}
+=======
 	padding: 3px 16px;
 	margin:15px;
 	border-bottom: 5px solid transparent;
@@ -81,3 +125,4 @@ nav a {
 
 
 
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc

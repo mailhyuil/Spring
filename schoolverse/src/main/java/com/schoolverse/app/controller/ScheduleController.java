@@ -10,6 +10,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+<<<<<<< HEAD
+
+import com.schoolverse.app.model.ClassVO;
+import com.schoolverse.app.model.ScheduleVO;
+import com.schoolverse.app.model.UserVO;
+=======
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -20,6 +26,7 @@ import com.schoolverse.app.model.ClassVO;
 import com.schoolverse.app.model.ScheduleVO;
 import com.schoolverse.app.model.UserVO;
 import com.schoolverse.app.service.AcademyService;
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 import com.schoolverse.app.service.BasketService;
 import com.schoolverse.app.service.ClassService;
 import com.schoolverse.app.service.ScheduleService;
@@ -33,8 +40,11 @@ public class ScheduleController {
 	private BasketService basketService;
 	@Autowired
 	private ClassService classService;
+<<<<<<< HEAD
+=======
 	@Autowired
 	private AcademyService acaService;
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 
 	@RequestMapping(value = { "/", "" }, method = RequestMethod.GET)
 	public String schedule(Model model, HttpSession session) {
@@ -76,6 +86,8 @@ public class ScheduleController {
 
 		return null;
 	}
+<<<<<<< HEAD
+=======
 	
 	
 	@ResponseBody
@@ -108,4 +120,5 @@ public class ScheduleController {
 		
 		return json;
 	}
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 }

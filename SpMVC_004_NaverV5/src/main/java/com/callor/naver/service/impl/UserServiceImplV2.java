@@ -12,6 +12,12 @@ import com.callor.naver.model.UserVO;
 
 import lombok.extern.slf4j.Slf4j;
 
+<<<<<<< HEAD
+@Slf4j
+@Service(QualifierConfig.SERVICE.USER_V2)
+public class UserServiceImplV2 extends UserServiceImplV1{
+	
+=======
 /*
  * 프로젝트 시작할때
  * No qualifying bean of type '..' 오류가 발생하는 경우
@@ -25,19 +31,45 @@ import lombok.extern.slf4j.Slf4j;
 @Service(QualifierConfig.SERVICE.USER_V2)
 public class UserServiceImplV2 extends UserServiceImplV1{
 
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 	@Autowired
 	protected PasswordEncoder passwordEncoder;
 	
 	@Override
 	public int join(UserVO userVO) {
+<<<<<<< HEAD
+		List<UserVO> users = userDao.selectAll();
+		
+		if(users == null || users.size()<1) {
+=======
 		
 		List<UserVO> users = userDao.selectAll();
 		if(users == null || users.size() < 1) {
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 			userVO.setRole("ADMIN");
 		} else {
 			userVO.setRole("GUEST");
 		}
 		
+<<<<<<< HEAD
+		UserVO email = userDao.findByEmail(userVO.getEmail());
+		
+		if(email != null) {
+			return -1;
+		}
+		
+		// password를 암호화 
+		String planPassword = userVO.getPassword();
+		String encPassword = passwordEncoder.encode(planPassword);
+		
+		// 암호화된 password를 다시 VO에 setting
+		userVO.setPassword(encPassword);
+		
+		userDao.insert(userVO);
+		return 0;
+	}
+
+=======
 		// password 를 암호화 하자
 		String planPassword =  userVO.getPassword();
 		String encPassword = passwordEncoder.encode(planPassword);
@@ -51,18 +83,28 @@ public class UserServiceImplV2 extends UserServiceImplV1{
 		return 0;
 	}
 	
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 	@Override
 	public UserVO login(UserVO userVO) {
 		UserVO loginUser = userDao.findById(userVO.getUsername());
 		String encPassword = loginUser.getPassword();
 		String planPassword = userVO.getPassword();
 		
+<<<<<<< HEAD
+=======
 				// (평문, 암호화된문자열)
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 		if(passwordEncoder.matches(planPassword, encPassword)) {
 			return loginUser;
 		}
 		return null;
 	}
+<<<<<<< HEAD
+	
+	
+
+}
+=======
 
 
 	
@@ -71,3 +113,4 @@ public class UserServiceImplV2 extends UserServiceImplV1{
 
 
 
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc

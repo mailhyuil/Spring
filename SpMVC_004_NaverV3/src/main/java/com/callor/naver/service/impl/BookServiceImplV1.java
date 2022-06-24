@@ -2,16 +2,35 @@ package com.callor.naver.service.impl;
 
 import java.util.List;
 
+<<<<<<< HEAD
+import javax.servlet.jsp.tagext.TryCatchFinally;
+
+=======
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.callor.naver.config.QualifierConfig;
 import com.callor.naver.model.BookVO;
+<<<<<<< HEAD
+import com.callor.naver.persistence.BookDao;
+=======
 import com.callor.naver.persistance.BookDao;
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 import com.callor.naver.service.BookService;
 
 import lombok.extern.slf4j.Slf4j;
 
+<<<<<<< HEAD
+
+/*
+ * bookServiceV1
+ * BookService interface를 상속받은 클래스가 다수 있을 때
+ * Controller 에서 어떤 클래스를 지금 연결하여 사용할 것인가의
+ * 문제가 발생한다
+ * 
+ * 그럴때 @Service("")
+=======
 /*
  * bookServiceV1
  * BookService interface를 상속받은 클래스가 다수 있을때
@@ -19,12 +38,26 @@ import lombok.extern.slf4j.Slf4j;
  * 문제가 발생한다
  * 
  * 그럴때 @Service Annotation 이름(식별자)을 부착하여 두고
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
  * 클래스 중에서 필요한 부분을 선택할 수 있도록 하기 위하여
  * 부착하는 것
  */
 @Slf4j
 @Service(QualifierConfig.SERVICE.BOOKS_V1)
 public class BookServiceImplV1 implements BookService{
+<<<<<<< HEAD
+	
+	@Autowired
+	private final BookDao dao;
+	
+	
+	public BookServiceImplV1(BookDao dao) {
+		this.dao = dao;
+	}
+	
+	@Override
+	public List<BookVO> findByTitle(String title) {
+=======
 
 	/*
 	 * GenericDao 를 상속받아 BookDao 를 만들고, 
@@ -74,43 +107,80 @@ public class BookServiceImplV1 implements BookService{
 	@Override
 	public List<BookVO> findByTitle(String title) {
 		// TODO Auto-generated method stub
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 		return null;
 	}
 
 	@Override
 	public List<BookVO> findByAuthor(String author) {
+<<<<<<< HEAD
+=======
 		// TODO Auto-generated method stub
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 		return null;
 	}
 
 	@Override
 	public List<BookVO> findByPublisher(String publisher) {
+<<<<<<< HEAD
+=======
 		// TODO Auto-generated method stub
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 		return null;
 	}
 
 	@Override
 	public List<BookVO> findByPrice(int price) {
+<<<<<<< HEAD
+=======
 		// TODO Auto-generated method stub
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 		return null;
 	}
 
 	@Override
 	public List<BookVO> selectAll() {
+<<<<<<< HEAD
+		return dao.selectAll();
+=======
 		List<BookVO> books = bookDao.selectAll();
 		return books;
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 	}
 
 	@Override
 	public BookVO findById(String id) {
+<<<<<<< HEAD
+		BookVO bookVO = dao.findById(id);
+		return bookVO;
+=======
 		// TODO Auto-generated method stub
 		BookVO bookVO = bookDao.findById(id);
 		return bookVO;
 		
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 	}
 
 	@Override
 	public int insert(BookVO vo) {
+<<<<<<< HEAD
+		dao.insert(vo);
+		return 0;
+	}
+
+
+	public int update(BookVO vo) {
+		dao.update(vo);
+		return 0;
+	}
+
+
+	public int delete(String id) {
+		dao.delete(id);
+		return 0;
+	}
+
+=======
 		/*
 		 * MyBATIS 에서 DB에 INSERT 를 수행하고 나면
 		 * INSERT 된 데이터의 행 개수를 return 한다
@@ -139,4 +209,5 @@ public class BookServiceImplV1 implements BookService{
 
 
 
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 }

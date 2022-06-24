@@ -5,6 +5,41 @@
 */
 
 header {
+<<<<<<< HEAD
+	
+	padding:1.2rem;
+	text-align: center;
+	background-color: rgb(193,226,237);
+	color:rgb(47.41,41);
+	font-weight: 900;
+	
+}
+
+nav {
+	background-color: skyblue;
+	color:white;
+}
+
+nav ul {
+	list-style: none;
+	display: flex;
+}
+
+nav li {
+	padding: 3px 16px;
+	margin:15px;
+	border-bottom: 5px solid transparent;
+	font-weight: 900;
+	font-size: 20px;
+	
+	transition : border 0.7s ease-out;
+	
+}
+
+nav li:hover {
+	cursor: pointer;
+	border-bottom: 5px solid rgb(241,241,114);
+=======
   padding: 1.2rem;
   text-align: center;
   background-color: rgb(193, 226, 237);
@@ -35,6 +70,7 @@ nav li {
 nav li:hover {
   cursor: pointer;
   border-bottom: 5px solid rgb(241, 241, 114);
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 }
 
 /*
@@ -49,7 +85,11 @@ nav li:hover {
 */
 
 a {
+<<<<<<< HEAD
+	text-decoration: none;
+=======
   text-decoration: none;
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 }
 
 /*
@@ -63,7 +103,26 @@ color : inherit
 불편함을 줄일 수 있다
 
 */
+<<<<<<< HEAD
+nav a { 
+	color:inherit;
+	white-space: nowrap;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+=======
 nav a {
   color: inherit;
   white-space: nowrap;
 }
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc

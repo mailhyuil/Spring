@@ -1,4 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
+<<<<<<< HEAD
+  const book_table = document.querySelector(".books");
+
+  book_table.addEventListener("click", (e) => {
+=======
   const book_table = document.querySelector("table.books");
 
   /*
@@ -16,11 +21,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // if(book_table) {   }
   book_table?.addEventListener("click", (e) => {
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
     const td = e.target;
     if (td.tagName === "TD") {
       const tr = td.closest("TR");
       const isbn = tr.dataset.isbn;
+<<<<<<< HEAD
+      //alert(isbn);
+=======
       // alert(isbn);
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
       document.location.href = `${rootPath}/books/${isbn}/detail`;
     }
   });

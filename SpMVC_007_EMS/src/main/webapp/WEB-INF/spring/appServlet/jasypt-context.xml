@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<<<<<<< HEAD
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
@@ -15,6 +16,22 @@
 	
 	<bean class="org.jasypt.spring31.properties.EncryptablePreferencesPlaceholderConfigurer">
 		<constructor-arg ref="configEnc"/>
+=======
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="envConfig" class="org.jasypt.encryption.pbe.config.EnvironmentStringPBEConfig">
+		<property name="algorithm" value="PBEWithMD5AndDES" />
+		<property name="passwordEnvName" value="NAVER" />
+	</bean>
+	
+	<bean id="configEnc" class="org.jasypt.encryption.pbe.StandardPBEStringEncryptor">
+		<property name="config" ref="envConfig" />
+	</bean>
+	
+	<bean class="org.jasypt.spring31.properties.EncryptablePreferencesPlaceholderConfigurer">
+		<constructor-arg ref="configEnc" />
+>>>>>>> 6af348449b33d62cc2a7a1dd7d9e505246078509
 		<property name="fileEncoding" value="UTF-8"/>
 		<property name="locations">
 			<list>
@@ -23,6 +40,10 @@
 			</list>
 		</property>
 	</bean>
+<<<<<<< HEAD
 
 
+=======
+	
+>>>>>>> 6af348449b33d62cc2a7a1dd7d9e505246078509
 </beans>

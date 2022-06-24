@@ -1,13 +1,29 @@
 package com.schoolverse.app.controller;
 
+<<<<<<< HEAD
+=======
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+<<<<<<< HEAD
+
+
+@Controller
+public class HomeController {
+
+	
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public String home(Model model) {
+		
+		return "home";
+	}
+=======
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -59,4 +75,5 @@ public class HomeController {
 		
 		return json;
 	}
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 }

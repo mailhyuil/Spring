@@ -3,6 +3,23 @@ package com.callor.images.service.impl;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
+<<<<<<< HEAD
+
+import com.callor.images.config.QualifierConfig;
+import com.callor.images.model.BBsVO;
+import com.callor.images.persistance.BbsDao;
+import com.callor.images.service.FileUpService;
+
+@Service(QualifierConfig.SERVICE.BBS_V1)
+public class BbsServiceImplV1 implements BbsDao{
+
+	private final BbsDao bbsDao;
+	private final FileUpService fileService;
+	
+	public BbsServiceImplV1(BbsDao bbsDao, FileUpService fileService) {
+		this.bbsDao = bbsDao;
+		this.fileService = fileService;
+=======
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
@@ -71,6 +88,7 @@ public class BbsServiceImplV1 implements BBsService{
 	public void create_bbs_table() {
 		// TODO Auto-generated method stub
 		
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 	}
 
 	@Override
@@ -81,7 +99,12 @@ public class BbsServiceImplV1 implements BBsService{
 
 	@Override
 	public BBsVO findById(Long id) {
+<<<<<<< HEAD
+		// TODO Auto-generated method stub
+		return null;
+=======
 		return bbsDao.findById(id);
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 	}
 
 	@Override
@@ -102,5 +125,15 @@ public class BbsServiceImplV1 implements BBsService{
 		return 0;
 	}
 
+<<<<<<< HEAD
+	@Override
+	public void create_bbs_table() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+=======
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 	
 }

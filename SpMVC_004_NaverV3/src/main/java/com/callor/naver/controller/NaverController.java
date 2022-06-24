@@ -16,6 +16,27 @@ import com.callor.naver.service.NaverService;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
+<<<<<<< HEAD
+@RequestMapping(value = "/naver")
+@Controller
+public class NaverController {
+	
+	
+	private final NaverService naverService;
+
+	public NaverController(@Qualifier(QualifierConfig.SERVICE.Naver_V2) 
+	NaverService naverService) {
+		this.naverService = naverService;
+	}
+
+	@RequestMapping(value = { "/", "" }, method = RequestMethod.GET)
+	public String home() {
+		return "naver/search";
+	}
+	
+	@RequestMapping(value = { "/", "" }, method = RequestMethod.POST,
+	produces = "application/json;charset=UTF-8")
+=======
 @RequestMapping(value="/naver")
 @Controller
 public class NaverController {
@@ -35,10 +56,30 @@ public class NaverController {
 	@RequestMapping(value= {"/",""}, 
 					method=RequestMethod.POST,
 					produces = "application/json;charset=UTF-8")
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 	public String home(String cat, String search, Model model) {
 		log.debug("카테고리 : " + cat);
 		log.debug("검색어 : {} ", search);
 		String queryString = naverService.queryString(cat, search);
+<<<<<<< HEAD
+		log.debug(queryString);
+		List<Object> bookList = naverService.getNaver(queryString);
+		
+		model.addAttribute("BOOKS", bookList);
+		
+		return "naver/book_search";
+	}
+
+//	@RequestMapping(value = "/books", method = RequestMethod.GET)
+//	public String getBooks(String title, Model model) {
+//
+//		String queryString = naverService.queryString("BOOK", title);
+//		List<BookVO> bookList = naverService.getNaverBook(queryString);
+//
+//		model.addAttribute("BOOKS", bookList);
+//		return "naver/book_search";
+//	}
+=======
 		List<Object> bookList = naverService.getNaver(queryString);
 		
 		model.addAttribute("BOOKS",bookList);
@@ -59,4 +100,5 @@ public class NaverController {
 //	
 //	}
 
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 }

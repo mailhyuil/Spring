@@ -16,7 +16,13 @@
 <body>
 <h1>수정하기</h1>
 <form:form modelAttribute="memoVO" enctype="multipart/form-data">
+<<<<<<< HEAD
 	<form:input path="m_author" placeholder="m_author"/>
+=======
+
+	<form:input path="m_author" placeholder="m_author"/>
+
+>>>>>>> 6af348449b33d62cc2a7a1dd7d9e505246078509
 	<form:textarea path="m_memo" placeholder="m_memo"></form:textarea>
 	<input type="file" name="up_file" accept="image/*"/>
 	<button>수정하기</button>

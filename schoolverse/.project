@@ -37,6 +37,10 @@
 		</buildCommand>
 	</buildSpec>
 	<natures>
+<<<<<<< HEAD
+		<nature>org.eclipse.jem.workbench.JavaEMFNature</nature>
+=======
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 		<nature>org.springframework.ide.eclipse.core.springnature</nature>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.m2e.core.maven2Nature</nature>

@@ -16,7 +16,11 @@
 <link rel="stylesheet"
 	href="${rootPath}/static/css/main.css?ver=2022-06-08-001">
 <link rel="stylesheet"
+<<<<<<< HEAD
+	href="${rootPath}/static/css/home.css?ver=2022-06-03-003">
+=======
 	href="${rootPath}/static/css/home.css?ver=2022-06-09-001">
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 
 <link rel="stylesheet"
 	href="${rootPath}/static/css/table.css?ver=2022-06-02-001">
@@ -74,6 +78,12 @@
 			<c:when test="${LAYOUT == 'MYPAGE' }">
 				<%@ include file="/WEB-INF/views/user/mypage.jsp" %>
 			</c:when>
+<<<<<<< HEAD
+			<c:otherwise>
+				<%@ include file="/WEB-INF/views/main_view.jsp" %>
+			</c:otherwise>
+=======
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 		</c:choose>
 	</section>
 	<footer class="main">

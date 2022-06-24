@@ -15,6 +15,7 @@
 </head>
 <body>
 <h1>추가하기</h1>
+<<<<<<< HEAD
 <%-- <form method="post" enctype="multipart/form-data">
 	<input placeholder="m_author" name="m_author"/>
 	<textarea placeholder="m_memo" name="m_memo"></textarea>
@@ -24,6 +25,12 @@
 
 <form:form modelAttribute="memoVO" enctype="multipart/form-data">
 	<form:input path="m_author" placeholder="m_author"/>
+=======
+<form:form modelAttribute="memoVO" enctype="multipart/form-data">
+	<form:input path="m_author" placeholder="m_author"/>
+	<form:input path="m_date" placeholder="m_date" type="hidden"/>
+	<form:input path="m_time" placeholder="m_time" type="hidden"/>
+>>>>>>> 6af348449b33d62cc2a7a1dd7d9e505246078509
 	<form:textarea path="m_memo" placeholder="m_memo"/>
 	<input type="file" name="up_file"/>
 	<button>추가</button>

@@ -1,17 +1,36 @@
 package com.schoolverse.app.controller;
 
+<<<<<<< HEAD
+=======
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+<<<<<<< HEAD
+import com.schoolverse.app.service.AcademyService;
+import com.schoolverse.app.service.BasketService;
+import com.schoolverse.app.service.ClassService;
+
+
+@Controller
+public class RegisterController {
+	@Autowired
+	private AcademyService acaService;
+	@Autowired
+	private ClassService classService;
+	
+	@RequestMapping(value = "/user/register", method = RequestMethod.GET)
+	public String register(Model model) {
+=======
 import com.schoolverse.app.model.AcademyVO;
 import com.schoolverse.app.model.BelongVO;
 import com.schoolverse.app.model.ClassVO;
@@ -113,6 +132,7 @@ public class RegisterController {
 
 			
 	
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 		
 		return null;
 	}

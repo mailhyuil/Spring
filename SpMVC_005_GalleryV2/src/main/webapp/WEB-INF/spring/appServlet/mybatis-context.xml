@@ -8,12 +8,27 @@
 		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context-4.3.xsd
 		http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
 		http://www.springframework.org/schema/tx https://www.springframework.org/schema/tx/spring-tx-4.1.xsd">
+<<<<<<< HEAD
+
+	<bean id="mysqlDS" class="org.apache.commons.dbcp2.BasicDataSource">
+		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
+		<property name="url" value="jdbc:mysql://localhost:3306/mydb" />
+		<property name="username" value="user1"/>
+		<property name="password" value="!Korea8080"/>
+	</bean>
+
+=======
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 	<!-- datasource -->
 	<bean id="oracleDS" class="org.apache.commons.dbcp2.BasicDataSource">
 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
 		<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
 		<property name="username" value="bookuser"/>
+<<<<<<< HEAD
+		<property name="password" value="bookuser"/>
+=======
 		<property name="password" value="12341234"/>
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 	</bean>
 	<!-- sqlSessionFactory -->
 	<!-- 

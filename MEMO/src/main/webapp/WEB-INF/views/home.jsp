@@ -24,7 +24,11 @@
 	<h1>홈</h1>
 
 	<div class="memo">
+<<<<<<< HEAD
 		<c:forEach items="${LIST}" var="VO">
+=======
+		<c:forEach items="${memoVO}" var="VO">
+>>>>>>> 6af348449b33d62cc2a7a1dd7d9e505246078509
 		<div class="memo_content" data-id="${VO.m_seq}">
 			<h3>${VO.m_author}</h3>
 			<h1>${VO.m_memo}</h1>

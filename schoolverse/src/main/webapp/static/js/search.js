@@ -7,11 +7,31 @@ const btnOpen = document.querySelector(".btn_open");
 const left_arrow = aside.querySelector(".xi-angle-left.xi-2x");
 const right_arrow = aside.querySelector(".xi-angle-right.xi-2x");
 const academy = document.querySelector(".academy");
+<<<<<<< HEAD
+const form = document.querySelector("form");
+
+form.addEventListener("submit", ()=>{
+  const input = form.querySelector("input");
+
+  
+  fetch(/search/aca_search?)
+})
+
+=======
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 
 const url = new URL(window.location.href);
 const urlParams = url.searchParams;
 if (urlParams.get("result") === "USED") {
   alert("이미 추가된 수업입니다.");
+<<<<<<< HEAD
+  window.location.search = "";
+}
+
+academy?.addEventListener("click", (e) => {
+  const target = e.target;
+  console.log(target.dataset.aca_code);
+=======
   location.href.search = "";
 }
 
@@ -30,6 +50,7 @@ const addCart = (c_code) => {
 
 academy?.addEventListener("click", (e) => {
   const target = e.target;
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 
   fetch(`/search/aca_info?aca_code=${target.dataset.aca_code}`)
     .then((res) => res.json())
@@ -37,6 +58,14 @@ academy?.addEventListener("click", (e) => {
       const aca_name = document.querySelector(".aca_name");
       const aca_info = document.querySelector(".aca_info");
       const others = document.querySelector(".others");
+<<<<<<< HEAD
+      aca_name.textContent = `${json[0].aca_name}`;
+      aca_info.textContent = `${json[0].aca_info}`;
+      others.textContent = "";
+      const category_class = document.createElement("h2");
+      category_class.textContent = "수업";
+      others.appendChild(category_class);
+=======
       const teacher = document.querySelector(".teacher-info");
       aca_name.textContent = `${json[0].aca_name}`;
       aca_info.textContent = `${json[0].aca_info}`;
@@ -47,6 +76,7 @@ academy?.addEventListener("click", (e) => {
       category_class.textContent = "수업";
       others.appendChild(category_class);
       console.log(json);
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
       json[1].map((item) => {
         others.innerHTML += `
         <div class="about_class">
@@ -60,6 +90,11 @@ academy?.addEventListener("click", (e) => {
         </div>
         <i class="xi-plus xi-3x add_basket" id="add_btn" data-c_code="${
           item.class_code
+<<<<<<< HEAD
+        }" onclick="location.href='/search/basket_add?c_code=${
+          item.class_code
+        }'" />
+=======
         }" onclick="addCart('${item.class_code}')" />
         `;
       });
@@ -71,6 +106,7 @@ academy?.addEventListener("click", (e) => {
           <h3>${item.teacher_name}</h3>
           <p>${item.teacher_info}</p>
         </div>
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
         `;
       });
     });

@@ -9,7 +9,15 @@
     </appender>
 
     <logger name="org.springframework" level="INFO" />
+<<<<<<< HEAD:MEMO/src/test/resources/logback.xml
     <logger name="com.callor.memo" level="DEBUG"  additivity="false">
+=======
+<<<<<<< HEAD
+    <logger name="com.callor.ems" level="DEBUG"  additivity="false">
+=======
+    <logger name="com.callor.hello" level="DEBUG"  additivity="false">
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
+>>>>>>> 6af348449b33d62cc2a7a1dd7d9e505246078509:SpMVC_007_EMS/src/main/resources/logback.xml
         <appender-ref ref="STDOUT"/>
     </logger>
 

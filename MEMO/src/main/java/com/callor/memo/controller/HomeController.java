@@ -34,21 +34,39 @@ public class HomeController {
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Model model) {
+<<<<<<< HEAD
 		List<MemoVO> list = memoService.selectAll();
 		model.addAttribute("LIST", list);
+=======
+		List<MemoVO> memoVO = memoService.selectAll();
+		model.addAttribute("memoVO", memoVO);
+>>>>>>> 6af348449b33d62cc2a7a1dd7d9e505246078509
 		return "home";
 	}
 
 	@RequestMapping(value = "/input", method = RequestMethod.GET)
+<<<<<<< HEAD
 	public String input(@ModelAttribute("memoVO") MemoVO memoVO) {
+=======
+	public String input() {
+>>>>>>> 6af348449b33d62cc2a7a1dd7d9e505246078509
 		return null;
 	}
 
 	@RequestMapping(value = "/input", method = RequestMethod.POST)
 	public String input(Model model, 
+<<<<<<< HEAD
 			MemoVO memoVO,
 			@RequestParam("up_file") MultipartFile up_file,
 			SessionStatus status) {
+=======
+			@ModelAttribute("memoVO") MemoVO memoVO,
+			@RequestParam("up_file") MultipartFile up_file,
+			SessionStatus status) {
+		log.debug(up_file.toString());
+		
+
+>>>>>>> 6af348449b33d62cc2a7a1dd7d9e505246078509
 		try {
 			String fileName = fileupService.fileUp(up_file);
 			memoVO.setM_image(fileName);
@@ -56,11 +74,18 @@ public class HomeController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+<<<<<<< HEAD
 		
 		memoService.insert(memoVO);
 		
 		status.setComplete();
 		
+=======
+
+		memoService.insert(memoVO);
+		
+		status.setComplete();
+>>>>>>> 6af348449b33d62cc2a7a1dd7d9e505246078509
 		return "redirect:/";
 	}
 
@@ -68,9 +93,13 @@ public class HomeController {
 	public String detail(long id, Model model) {
 		
 		MemoVO vo = memoService.findById(id);
+<<<<<<< HEAD
 		
 		model.addAttribute("VO", vo);
 		
+=======
+		model.addAttribute("VO", vo);
+>>>>>>> 6af348449b33d62cc2a7a1dd7d9e505246078509
 		return null;
 	}
 
@@ -82,10 +111,23 @@ public class HomeController {
 	}
 
 	@RequestMapping(value = "/update", method = RequestMethod.POST)
+<<<<<<< HEAD
 	public String update(long id, Model model, MemoVO memoVO, 
 			@RequestParam("up_file") MultipartFile up_file,
 			SessionStatus status) {
 		
+=======
+	public String update(long id, Model model, 
+			@ModelAttribute("memoVO") MemoVO memoVO, 
+			@RequestParam("up_file") MultipartFile up_file,
+			SessionStatus status) {
+		log.debug(up_file.toString());
+		
+		Date date = new Date(System.currentTimeMillis());
+		SimpleDateFormat dayFormat = new SimpleDateFormat("yyyy-MM-dd");
+		SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm:ss");
+
+>>>>>>> 6af348449b33d62cc2a7a1dd7d9e505246078509
 		try {
 			String fileName = fileupService.fileUp(up_file);
 			memoVO.setM_image(fileName);
@@ -93,7 +135,14 @@ public class HomeController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+<<<<<<< HEAD
 		
+=======
+
+
+		memoVO.setM_date(dayFormat.format(date));
+		memoVO.setM_time(timeFormat.format(date));
+>>>>>>> 6af348449b33d62cc2a7a1dd7d9e505246078509
 		memoService.update(memoVO);
 		
 		status.setComplete();
@@ -102,7 +151,11 @@ public class HomeController {
 	}
 
 	@RequestMapping(value = "/delete", method = RequestMethod.GET)
+<<<<<<< HEAD
 	public String delete(long id) {
+=======
+	public String update(long id) {
+>>>>>>> 6af348449b33d62cc2a7a1dd7d9e505246078509
 		memoService.delete(id);
 		return "redirect:/";
 	}
@@ -112,8 +165,16 @@ public class HomeController {
 		Date date = new Date(System.currentTimeMillis());
 		SimpleDateFormat dayFormat = new SimpleDateFormat("yyyy-MM-dd");
 		SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm:ss");
+<<<<<<< HEAD
 		return MemoVO.builder().m_date(dayFormat.format(date))
 					.m_time(timeFormat.format(date))
 					.build();
+=======
+//		memoVO.setM_date(dayFormat.format(date));
+//		memoVO.setM_time(timeFormat.format(date));
+		return MemoVO.builder().m_date(dayFormat.format(date))
+					.m_time(timeFormat.format(date))
+					.m_author("ddd").build();
+>>>>>>> 6af348449b33d62cc2a7a1dd7d9e505246078509
 	}
 }

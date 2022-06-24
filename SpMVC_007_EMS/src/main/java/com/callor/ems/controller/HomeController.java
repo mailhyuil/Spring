@@ -7,6 +7,10 @@ import javax.validation.Valid;
 
 import org.jasypt.encryption.pbe.StandardPBEStringEncryptor;
 import org.springframework.beans.factory.annotation.Autowired;
+<<<<<<< HEAD
+=======
+import org.springframework.beans.factory.annotation.Qualifier;
+>>>>>>> 6af348449b33d62cc2a7a1dd7d9e505246078509
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,6 +20,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.callor.ems.model.EmsVO;
+<<<<<<< HEAD
+=======
+import com.callor.ems.service.QualifyConfig;
+import com.callor.ems.service.SendMailService;
+>>>>>>> 6af348449b33d62cc2a7a1dd7d9e505246078509
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -25,6 +34,7 @@ public class HomeController {
 	
 	@Value("#{naver['naver.username']}")
 	private String naver_username;
+<<<<<<< HEAD
 	
 	@Value("#{app['my.app']}")
 	private String myApp;
@@ -74,6 +84,44 @@ public class HomeController {
 		if(result.hasErrors()) {
 			return "home";
 		}
+=======
+	@Value("#{app['my.app']}")
+	private String myApp;
+	@Autowired
+	private StandardPBEStringEncryptor pbEnc;
+	@Autowired
+	@Qualifier(QualifyConfig.SERVICE.MAIL_V1)
+	private SendMailService xMail;
+	
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public String home(@ModelAttribute("emsVO") EmsVO emsVO, Model model) {
+
+		Pattern PATT_BLACKET = Pattern.compile("\\([^\\(\\)]+\\)");
+		Matcher matcher = PATT_BLACKET.matcher(naver_username);
+		
+		if(matcher.find()) {
+			int startIndex = matcher.start();
+			int endIndex = matcher.end();
+			String findText = naver_username.substring(startIndex + 1, endIndex - 1);
+			String user = pbEnc.decrypt(findText);
+			log.debug("NaverUser {}", user);
+		}
+		
+		log.debug("Naver UserName {}", naver_username);
+		log.debug("myApp {}", myApp);
+		
+		model.addAttribute("emsVO", emsVO);
+		return "home";
+	}
+	
+	@RequestMapping(value="/", method=RequestMethod.POST)
+	public String home(@Valid EmsVO emsVO, BindingResult result) {
+		if(result.hasErrors()) {
+			return "home";
+		}
+		log.debug(emsVO.toString());
+		xMail.sendMail(emsVO);
+>>>>>>> 6af348449b33d62cc2a7a1dd7d9e505246078509
 		return "redirect:/";
 	}
 	
@@ -81,5 +129,8 @@ public class HomeController {
 	private EmsVO emsVO() {
 		return new EmsVO();
 	}
+<<<<<<< HEAD
 	
+=======
+>>>>>>> 6af348449b33d62cc2a7a1dd7d9e505246078509
 }

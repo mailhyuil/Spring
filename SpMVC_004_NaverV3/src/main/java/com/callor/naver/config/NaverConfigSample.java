@@ -1,4 +1,19 @@
 package com.callor.naver.config;
+<<<<<<< HEAD
+/*
+ * Naver 개발자 센터에 등록하고
+ * 어플리케이션을 생성하여 부여된 id와 sec를
+ * 다음의 변수에 작성하고 이 클래스를 NaverConfig 이름으로
+ * 변경한 후 프로젝트를 실행하시오 
+ */
+public class NaverConfigSample {
+	public static final String NAVER_CLIENT_ID = "";
+	public static final String NAVER_CLIENT_SEC = "";
+	
+	public static class HEADER{
+	    public static final String ID = "X-Naver-Client-Id";
+	    public static final String SEC = "X-Naver-Client-Secret";
+=======
 
 /*
  * Naver 개발자센터에 등록하고
@@ -14,13 +29,22 @@ public class NaverConfigSample {
 	public static class HEADER {
 		public static final String ID = "X-Naver-Client-Id";
 		public static final String SEC = "X-Naver-Client-Secret";
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 	}
 	
 	public static final String NAVER_BOOK_URL = "https://openapi.naver.com/v1/search/book.json";
 	public static final String NAVER_BOOK_XML_URL = "https://openapi.naver.com/v1/search/book.xml";
+<<<<<<< HEAD
+	
+	public static final String NAVER_NEWS_URL = "https://openapi.naver.com/v1/search/news.json";
+	public static final String NAVER_MOVIE_URL = "https://openapi.naver.com/v1/search/movie.json";
+	
+	
+=======
 	public static final String NAVER_NEWS_URL = "https://openapi.naver.com/v1/search/news.json";
 	public static final String NAVER_MOVIE_URL = "https://openapi.naver.com/";
 
 	
 
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 }
