@@ -41,6 +41,7 @@ public class BBsController {
 		/*
 		 * 주입받은 bbsVO 객체 데이터를 form(.jsp) 로 전달하기
 		 */
+		
 		model.addAttribute("bbsVO",bbsVO);
 		return "bbs/input";
 		

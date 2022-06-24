@@ -45,19 +45,9 @@ public class FileUpController {
 	}
 	
 	@RequestMapping(value="/fileups",method=RequestMethod.POST)
-	public String upFiles(
-			
-			@ModelAttribute("bbsVO")
-			BBsVO bbsVO, 
-			MultipartHttpServletRequest mFiles, 
-			
-			Model model) {
-		
+	public String upFiles(@ModelAttribute("bbsVO") BBsVO bbsVO,	MultipartHttpServletRequest mFiles,	Model model) {
 			bbsService.insertBbsAndFiles(bbsVO, mFiles);
-		
-		
 		return null;
-
 	}
 	
 	@ModelAttribute("bbsVO")
