@@ -21,7 +21,9 @@
 	<h1>${VO.m_memo}</h1>
 	<img src="${rootPath}/upload/${VO.m_image}" width="100px"
 		alt="${VO.m_image}">
-	<hr>
+	<button onclick="location.href='${rootPath}/update?id=${VO.m_seq}';">수정하기</button>
+	<button onclick="location.href='${rootPath}/delete?id=${VO.m_seq}';">삭제하기</button>
+	
 </html>
 
 

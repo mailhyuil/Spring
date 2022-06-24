@@ -7,6 +7,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -71,6 +72,43 @@ public class HomeController {
 		return null;
 	}
 
+	@RequestMapping(value = "/update", method = RequestMethod.GET)
+	public String update(long id, Model model) {
+		MemoVO vo = memoService.findById(id);
+
+		model.addAttribute("VO", vo);
+		return null;
+	}
+
+	@RequestMapping(value = "/update", method = RequestMethod.POST)
+	public String update(long id, Model model, @ModelAttribute MemoVO memoVO,@RequestParam("up_file") MultipartFile up_file) {
+		log.debug(up_file.toString());
+		
+		Date date = new Date(System.currentTimeMillis());
+		SimpleDateFormat dayFormat = new SimpleDateFormat("yyyy-MM-dd");
+		SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm:ss");
+
+		try {
+			String fileName = fileupService.fileUp(up_file);
+			memoVO.setM_image(fileName);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+
+		memoVO.setM_date(dayFormat.format(date));
+		memoVO.setM_time(timeFormat.format(date));
+		memoService.update(memoVO);
+		return "redirect:/";
+	}
+
+	@RequestMapping(value = "/delete", method = RequestMethod.GET)
+	public String update(long id) {
+		memoService.delete(id);
+		return "redirect:/";
+	}
+	
 	@ModelAttribute("memoVO")
 	private MemoVO memoVO() {
 		return new MemoVO();

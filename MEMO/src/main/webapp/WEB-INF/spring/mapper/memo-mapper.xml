@@ -39,8 +39,7 @@
 		        m_author = #{m_author},	
 		        m_date = #{m_date},	
 		        m_memo = #{m_memo},	
-		        m_image = #{m_image},		
-		        role = #{role}	
+		        m_image = #{m_image}
  		WHERE m_seq = #{m_seq}
  	</update>
  	

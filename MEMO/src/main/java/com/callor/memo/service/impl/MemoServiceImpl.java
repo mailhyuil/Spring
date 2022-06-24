@@ -32,12 +32,12 @@ public class MemoServiceImpl implements MemoService{
 
 	@Override
 	public int update(MemoVO vo) {
-		return 0;
+		return memoDao.update(vo);
 	}
 
 	@Override
 	public int delete(Long id) {
-		return 0;
+		return memoDao.delete(id);
 	}
 
 }
