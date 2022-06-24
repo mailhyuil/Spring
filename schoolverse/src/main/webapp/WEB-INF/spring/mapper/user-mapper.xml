@@ -35,14 +35,24 @@
 		        email,	
 		        name,	
 		        nickname,		
+<<<<<<< HEAD
 		        role	
+=======
+		        role,
+		        aca_code	
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
  			) VALUES (
  		        #{username},
 		        #{password},	
 		        #{email},	
 		        #{name},	
 		        #{nickname},		
+<<<<<<< HEAD
 		        #{role}	
+=======
+		        #{role},
+		        #{aca_code}	
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
  			)
  	</insert>
  	<update id="update" parameterType="UserVO">
@@ -51,7 +61,12 @@
 		        email = #{email},	
 		        name = #{name},	
 		        nickname = #{nickname},		
+<<<<<<< HEAD
 		        role = #{role}	
+=======
+		        role = #{role},	
+		        aca_code = #{aca_code}	
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
  		WHERE username = #{username}
  	</update>
  	<delete id="delete">

@@ -8,6 +8,8 @@ public class InputServiceImpl2 extends InputServiceImpl {
 	public InputServiceImpl2() {
 		super();
 	}
+	
+	
 
 	@Override
 	public String inputContent() {

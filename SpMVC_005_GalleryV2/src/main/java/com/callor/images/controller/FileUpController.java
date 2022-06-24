@@ -51,7 +51,11 @@ public class FileUpController {
 			BBsVO bbsVO, 
 			MultipartHttpServletRequest mFiles, 
 			
+<<<<<<< HEAD
 			Model mode) {
+=======
+			Model model) {
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 		
 			bbsService.insertBbsAndFiles(bbsVO, mFiles);
 		

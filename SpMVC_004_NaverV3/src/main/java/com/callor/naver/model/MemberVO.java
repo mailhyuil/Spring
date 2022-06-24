@@ -9,9 +9,15 @@ import lombok.ToString;
 
 @Getter
 @Setter
+<<<<<<< HEAD
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
+=======
+@ToString
+@AllArgsConstructor
+@NoArgsConstructor
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 @Builder
 public class MemberVO {
 	
@@ -22,5 +28,9 @@ public class MemberVO {
 	private String email;
 	private String tel;
 	private String role;
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 }

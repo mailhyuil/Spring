@@ -9,7 +9,11 @@
     </appender>
 
     <logger name="org.springframework" level="INFO" />
+<<<<<<< HEAD
     <logger name="com.callor.ems" level="DEBUG"  additivity="false">
+=======
+    <logger name="com.callor.hello" level="DEBUG"  additivity="false">
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
         <appender-ref ref="STDOUT"/>
     </logger>
 

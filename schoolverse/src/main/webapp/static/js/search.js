@@ -7,6 +7,7 @@ const btnOpen = document.querySelector(".btn_open");
 const left_arrow = aside.querySelector(".xi-angle-left.xi-2x");
 const right_arrow = aside.querySelector(".xi-angle-right.xi-2x");
 const academy = document.querySelector(".academy");
+<<<<<<< HEAD
 const form = document.querySelector("form");
 
 form.addEventListener("submit", ()=>{
@@ -16,17 +17,40 @@ form.addEventListener("submit", ()=>{
   fetch(/search/aca_search?)
 })
 
+=======
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 
 const url = new URL(window.location.href);
 const urlParams = url.searchParams;
 if (urlParams.get("result") === "USED") {
   alert("이미 추가된 수업입니다.");
+<<<<<<< HEAD
   window.location.search = "";
 }
 
 academy?.addEventListener("click", (e) => {
   const target = e.target;
   console.log(target.dataset.aca_code);
+=======
+  location.href.search = "";
+}
+
+const addCart = (c_code) => {
+  fetch(`/search/basket_add?c_code=${c_code}`)
+    .then((res) => res.text())
+    .then((result) => {
+      console.log(result);
+      if (result === "OK") {
+        alert("추가되었습니다.");
+      } else {
+        alert("이미 추가된 수업입니다.");
+      }
+    });
+};
+
+academy?.addEventListener("click", (e) => {
+  const target = e.target;
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 
   fetch(`/search/aca_info?aca_code=${target.dataset.aca_code}`)
     .then((res) => res.json())
@@ -34,12 +58,25 @@ academy?.addEventListener("click", (e) => {
       const aca_name = document.querySelector(".aca_name");
       const aca_info = document.querySelector(".aca_info");
       const others = document.querySelector(".others");
+<<<<<<< HEAD
       aca_name.textContent = `${json[0].aca_name}`;
       aca_info.textContent = `${json[0].aca_info}`;
       others.textContent = "";
       const category_class = document.createElement("h2");
       category_class.textContent = "수업";
       others.appendChild(category_class);
+=======
+      const teacher = document.querySelector(".teacher-info");
+      aca_name.textContent = `${json[0].aca_name}`;
+      aca_info.textContent = `${json[0].aca_info}`;
+      others.textContent = "";
+      teacher.textContent = "";
+
+      const category_class = document.createElement("h2");
+      category_class.textContent = "수업";
+      others.appendChild(category_class);
+      console.log(json);
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
       json[1].map((item) => {
         others.innerHTML += `
         <div class="about_class">
@@ -53,9 +90,23 @@ academy?.addEventListener("click", (e) => {
         </div>
         <i class="xi-plus xi-3x add_basket" id="add_btn" data-c_code="${
           item.class_code
+<<<<<<< HEAD
         }" onclick="location.href='/search/basket_add?c_code=${
           item.class_code
         }'" />
+=======
+        }" onclick="addCart('${item.class_code}')" />
+        `;
+      });
+
+      json[2].map((item) => {
+        teacher.innerHTML += `
+        <img src="static/img/teacher2.png" />
+        <div>
+          <h3>${item.teacher_name}</h3>
+          <p>${item.teacher_info}</p>
+        </div>
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
         `;
       });
     });

@@ -49,6 +49,18 @@ div.btn-box {
 		<th>전화번호</th>
 	</tr>
 	<c:forEach items="${ST_LIST}" var="ST">
+	<tr>
+		<th>${ST.st_num}</th>
+		<th>${ST.st_name}</th>
+		<th>${ST.st_tel}</th>
+	</tr>
+	</c:forEach>
+
+=======
+<<<<<<< HEAD
+		<th>전화번호</th>
+	</tr>
+	<c:forEach items="${ST_LIST}" var="ST">
 		<tr>
 			<td>${ST.st_num}</td>
 			<td>${ST.st_name}</td>
@@ -63,6 +75,7 @@ div.btn-box {
 		<th>전화번호</th>
 	</tr>
 >>>>>>> ae373ae3259e4071ff920c5231ee0ea91045b5e1
+>>>>>>> 40232efce16720ffa9fdbf8d34237af595e50278
 </table>
 <div class="btn-box">
 	<button class="btn-green std-input">학생정보 등록</button>

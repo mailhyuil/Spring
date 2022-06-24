@@ -25,6 +25,18 @@ import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
+<<<<<<< HEAD
+@Service(QualifierConfig.SERVICE.NAVER_V2)
+public class NaverServiceImplV2 extends NaverServiceImpl {
+	
+	@Override
+	public String queryString(String cat, String search) {
+
+		String queryString = NaverConfig.NAVER_BOOK_XML_URL;
+		String encodeSearch = null;
+		try {
+			encodeSearch = URLEncoder.encode(search,"UTF-8");
+=======
 @Service(QualifierConfig.SERVICE.Naver_V2)
 public class NaverServiceImplV2 extends NaverServiceImpl {
 
@@ -38,10 +50,21 @@ public class NaverServiceImplV2 extends NaverServiceImpl {
 		
 		try {
 			encodeSearch = URLEncoder.encode(search, "UTF-8");
+>>>>>>> 40232efce16720ffa9fdbf8d34237af595e50278
 		} catch (UnsupportedEncodingException e) {
 			log.debug("URL Encoding 오류발생");
 			return null;
 		}
+<<<<<<< HEAD
+		queryString += String.format("?query=%s", encodeSearch);
+		log.debug("Query : " + queryString);
+		
+		queryString += String.format("&display=%d", 10);
+		return queryString;
+
+	}
+
+=======
 		
 		queryString += String.format("?query=%s", encodeSearch);
 		log.debug("Query : " + queryString);
@@ -49,6 +72,7 @@ public class NaverServiceImplV2 extends NaverServiceImpl {
 		return queryString;
 	}
 	
+>>>>>>> 40232efce16720ffa9fdbf8d34237af595e50278
 	@Override
 	public List<Object> getNaver(String queryString) {
 
@@ -57,6 +81,59 @@ public class NaverServiceImplV2 extends NaverServiceImpl {
 			restURI = new URI(queryString);
 		} catch (URISyntaxException e) {
 			// TODO Auto-generated catch block
+<<<<<<< HEAD
+			// e.printStackTrace();
+			log.debug("URI 문법오류");
+			return null;
+		}
+		
+		// Http 프로토콜에 보안 정보를 세팅하여
+		// Naver 로 전송할 준비
+		HttpHeaders headers = new HttpHeaders();
+		headers.set(NaverConfig.HEADER.ID, NaverConfig.NAVER_CLIENT_ID);
+		headers.set(NaverConfig.HEADER.SEC, NaverConfig.NAVER_CLIENT_SEC);
+
+		// JSON 데이터 타입으로 받겠다
+		headers.setAccept(
+				Collections.singletonList(
+						MediaType.APPLICATION_XML));
+		
+		// headers 에 추가된 정보를 Entity type 의 객체로 변환하기
+		HttpEntity<String> entity 
+		= new HttpEntity<String>("parameter",headers);
+		
+		/*
+		 * NaverParent 는 List<VO> 타입의 items 변수를 갖는데
+		 * 여기에서 VO type 을 BookVO 로 확정지어 준다
+		 */
+		RestTemplate restTemp = new RestTemplate();
+
+		/*
+		 * VO 가 아닌 String 형으로 수신하기
+		 */
+		ResponseEntity<String> resData = null;
+		resData = restTemp.exchange(
+				restURI,
+				HttpMethod.GET, 
+				entity, 
+				String.class
+				);
+
+		System.out.println("=".repeat(100));
+		System.out.println(resData.getBody());
+		System.out.println("=".repeat(100));
+		
+		String xmlString = resData.getBody();
+		
+		// xml 문자열을 VO 객체로 변환하기 위한 도구
+		ObjectMapper xmlMapper = new XmlMapper();
+		try {
+			NaverChannel naverChannel 
+				= xmlMapper.readValue(xmlString, NaverChannel.class);
+			
+			log.debug(naverChannel.channel.item.toString());
+			return naverChannel.channel.item ;
+=======
 			log.debug("URI 문법오류");
 			return null;
 		}
@@ -93,14 +170,21 @@ public class NaverServiceImplV2 extends NaverServiceImpl {
 					NaverChannel.class);
 			log.debug(naverChannel.channel.item.toString());
 			return naverChannel.channel.item;
+>>>>>>> 40232efce16720ffa9fdbf8d34237af595e50278
 		} catch (JsonProcessingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
+<<<<<<< HEAD
+		// return resData.getBody().items;
+		return null;
+		
+=======
 		
 		return null;
 
+>>>>>>> 40232efce16720ffa9fdbf8d34237af595e50278
 	}
 
 }

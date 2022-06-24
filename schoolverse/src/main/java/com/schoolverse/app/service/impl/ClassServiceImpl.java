@@ -30,6 +30,10 @@ public class ClassServiceImpl implements ClassService{
 
 	@Override
 	public int insert(ClassVO vo) {
+<<<<<<< HEAD
+=======
+		dao.insert(vo);
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 		return 0;
 	}
 
@@ -44,12 +48,20 @@ public class ClassServiceImpl implements ClassService{
 	}
 
 	@Override
+<<<<<<< HEAD
 	public List<ScheduleVO> findScheduleByClassCode(String c_code) {
+=======
+	public List<ScheduleVO> findScheduleByClassCode(long c_code) {
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 		return dao.findScheduleByClassCode(c_code);
 	}
 
 	@Override
+<<<<<<< HEAD
 	public List<ClassVO> findByAcaCode(String aca_code) {
+=======
+	public List<ClassVO> findByAcaCode(long aca_code) {
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 		return dao.findByAcaCode(aca_code);
 	}
 	

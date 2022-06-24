@@ -51,6 +51,7 @@
 			<version>2.9.0</version>
 		</dependency>
 
+<<<<<<< HEAD
 		<!-- https://mvnrepository.com/artifact/com.oracle.database.jdbc/ojdbc8 -->
 		<dependency>
 			<groupId>com.oracle.database.jdbc</groupId>
@@ -58,6 +59,15 @@
 			<version>21.5.0.0</version>
 		</dependency>
 
+=======
+		<!-- mysql connector -->
+		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.29</version>
+		</dependency>
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 		<!-- mybatis -->
 		<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
 		<dependency>
@@ -149,6 +159,7 @@
 			<version>4.7</version>
 			<scope>test</scope>
 		</dependency>
+<<<<<<< HEAD
 
 		<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-core -->
 		<dependency>
@@ -156,6 +167,8 @@
 			<artifactId>spring-security-core</artifactId>
 			<version>5.3.13.RELEASE</version>
 		</dependency>
+=======
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 	</dependencies>
 	<build>
 		<plugins>

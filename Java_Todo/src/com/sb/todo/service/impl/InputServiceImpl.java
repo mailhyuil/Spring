@@ -8,6 +8,8 @@ public class InputServiceImpl implements InputService {
 
 	protected final Scanner scan;
 	
+
+	
 	public InputServiceImpl() {
 		scan = new Scanner(System.in);
 	}
@@ -20,9 +22,10 @@ public class InputServiceImpl implements InputService {
 		System.out.println("=".repeat(50));
 		System.out.println("1. TODO 추가하기");
 		System.out.println("2. TODO LIST 보기");
-		System.out.println("3. KEY로 검색하기");
+		System.out.println("3. 변경하기");
 		System.out.println("4. 완료처리하기");
-		System.out.println("5. 종료하기");
+		System.out.println("5. 파일에 저장하기");
+		System.out.println("6. 종료하기");
 		System.out.println("=".repeat(50));
 		System.out.print("선택 >> ");
 		String strMenu = scan.nextLine();

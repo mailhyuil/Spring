@@ -81,7 +81,7 @@ nav li:nth-of-type(4) {
 }
 
 section.main {
-	flex: 1;
+	height: 80vh;
 	padding: 5px;
 	display: flex;
 }
@@ -149,6 +149,11 @@ button.btn-orange {
 	background-color: orange;
 	color: white;
 }
+<<<<<<< HEAD
+article.st-list{
+	overflow:auto;
+}
+=======
 
 <<<<<<< HEAD
 article.st-list {
@@ -162,6 +167,7 @@ article.st-list {
 
 
 >>>>>>> ae373ae3259e4071ff920c5231ee0ea91045b5e1
+>>>>>>> 40232efce16720ffa9fdbf8d34237af595e50278
 </style>
 <script>
 	// jsp 의 속성(변수)값을 JS 로 보내기 위해
@@ -206,11 +212,17 @@ article.st-list {
 			<c:otherwise>
 <<<<<<< HEAD
 				<article class="st-list">
+				<%@include file="/WEB-INF/views/student/list.jsp" %>
+				</article>
+=======
+<<<<<<< HEAD
+				<article class="st-list">
 					<%@ include file="/WEB-INF/views/student/list.jsp"%>
 				</article>
 =======
 				<article></article>
 >>>>>>> ae373ae3259e4071ff920c5231ee0ea91045b5e1
+>>>>>>> 40232efce16720ffa9fdbf8d34237af595e50278
 				<article></article>
 				<article></article>
 			</c:otherwise>
@@ -218,7 +230,7 @@ article.st-list {
 
 	</section>
 	<footer>
-		<address>CopyRight &copy; callor@callor.com</address>
+		<address>CopyRight &copy; mailhyuil@gmail.com</address>
 	</footer>
 </body>
 </html>

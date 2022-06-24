@@ -69,8 +69,15 @@ public class BasketServiceImpl implements BasketService{
 		return 0;
 	}
 
+<<<<<<< HEAD
 	@Override
 	public String findByClassAndId(String c_code, String u_id) {
+=======
+
+
+	@Override
+	public String findByClassAndId(long c_code, String u_id) {
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 		return dao.findByClassAndId(c_code, u_id);
 	}
 

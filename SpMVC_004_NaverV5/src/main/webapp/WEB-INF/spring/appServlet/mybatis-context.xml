@@ -41,12 +41,15 @@
 	<bean class="org.mybatis.spring.SqlSessionTemplate">
 		<constructor-arg ref="sqlSessionFactory"/>	
 	</bean>
+<<<<<<< HEAD
 	
 	<tx:jta-transaction-manager />
 	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource" ref="ds" />
 	</bean>
 	
+=======
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 	<mybatis-spring:scan base-package="com.callor.naver.persistance"/>
 
 </beans>

@@ -14,5 +14,12 @@ public class HomeController {
 	public String home() {
 		log.debug("HOME");
 		return "home";
+<<<<<<< HEAD
 	}	
+=======
+	}
+
+	
+	
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 }

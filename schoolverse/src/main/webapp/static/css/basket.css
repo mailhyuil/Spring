@@ -16,6 +16,10 @@
 }
 
 div.wrapper {
+<<<<<<< HEAD
+=======
+	z-index:99;
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
     display: flex;
     position: fixed;
     top: 0;
@@ -29,6 +33,10 @@ div.wrapper {
 }
 
 .basket-button {
+<<<<<<< HEAD
+=======
+	z-index:50;
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
     position: absolute;
     display: flex;
     background-color: rgb(70, 70, 70);
@@ -73,6 +81,10 @@ div.sub-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
+<<<<<<< HEAD
+=======
+    width:269.424;
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 }
 
 div.sub-wrapper h1 {

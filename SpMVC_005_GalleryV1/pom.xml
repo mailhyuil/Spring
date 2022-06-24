@@ -14,12 +14,21 @@
 		<org.slf4j-version>1.7.36</org.slf4j-version>
 		<jackson-version>2.13.3</jackson-version>
 	</properties>
+<<<<<<< HEAD
 <!-- 
 	현재 프로젝트의 dependency들의 version을 통합관리하기
 	
 	org.springframework의 group id 를 갖는 dependency 들은
 	여기에서 통합하여 version관리를 수행한다
  -->
+=======
+	<!-- 
+	현재 프로젝트의 dependency 들의 version 을 통합관리하기
+	
+	org.springframework 의 group id 를 갖는 dependency 들은
+	여기에서 통합하여 version 관리를 수행한다
+	 -->
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 	<dependencyManagement>
 		<dependencies>
 			<!-- https://mvnrepository.com/artifact/org.springframework/spring-framework-bom -->
@@ -58,6 +67,17 @@
 			<artifactId>spring-jdbc</artifactId>
 		</dependency>
 
+<<<<<<< HEAD
+=======
+
+		<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-core -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-core</artifactId>
+			<version>5.3.13.RELEASE</version>
+		</dependency>
+
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 		<!-- common-dbcp2 -->
 		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-dbcp2 -->
 		<dependency>
@@ -66,6 +86,16 @@
 			<version>2.9.0</version>
 		</dependency>
 
+<<<<<<< HEAD
+=======
+		<!-- mysql connector -->
+		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.29</version>
+		</dependency>
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 		<!-- mybatis -->
 		<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
 		<dependency>
@@ -81,7 +111,10 @@
 			<version>21.5.0.0</version>
 		</dependency>
 
+<<<<<<< HEAD
 		<!-- mysql connector -->
+=======
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
 		<dependency>
 			<groupId>mysql</groupId>
@@ -89,6 +122,11 @@
 			<version>8.0.29</version>
 		</dependency>
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 		<!-- mybatis-spring -->
 		<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis-spring -->
 		<dependency>
@@ -96,7 +134,10 @@
 			<artifactId>mybatis-spring</artifactId>
 			<version>2.0.7</version>
 		</dependency>
+<<<<<<< HEAD
 
+=======
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 		<!-- lombok -->
 		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
 		<dependency>
@@ -105,7 +146,10 @@
 			<version>1.18.24</version>
 			<scope>provided</scope>
 		</dependency>
+<<<<<<< HEAD
 
+=======
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
@@ -119,6 +163,7 @@
 			<version>${jackson-version}</version>
 		</dependency>
 
+<<<<<<< HEAD
 		<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-core -->
 		<dependency>
 			<groupId>org.springframework.security</groupId>
@@ -128,6 +173,8 @@
 
 
 
+=======
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 		<!-- AspectJ -->
 		<dependency>
 			<groupId>org.aspectj</groupId>

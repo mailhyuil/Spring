@@ -30,6 +30,10 @@ public class ScheduleServiceImpl implements ScheduleService {
 
 	@Override
 	public int insert(ScheduleVO vo) {
+<<<<<<< HEAD
+=======
+		dao.insert(vo);
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 		return 0;
 	}
 

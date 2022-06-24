@@ -46,8 +46,12 @@
 <<<<<<< HEAD
 			<param-value>/WEB-INF/spring/appServlet/*-context.xml</param-value>
 =======
+<<<<<<< HEAD
+			<param-value>/WEB-INF/spring/appServlet/*-context.xml</param-value>
+=======
 			<param-value>/WEB-INF/spring/appServlet/servlet-context.xml</param-value>
 >>>>>>> ae373ae3259e4071ff920c5231ee0ea91045b5e1
+>>>>>>> 40232efce16720ffa9fdbf8d34237af595e50278
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>

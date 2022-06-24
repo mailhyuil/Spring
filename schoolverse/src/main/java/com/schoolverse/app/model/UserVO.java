@@ -18,4 +18,8 @@ public class UserVO {
 	private String name;
 	private String nickname;
 	private String role;
+<<<<<<< HEAD
+=======
+	private long aca_code;
+>>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 }

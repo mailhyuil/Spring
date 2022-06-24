@@ -77,38 +77,54 @@ form div:first-of-type button {
 }
 
 form div:last-of-type {
-	justify-content:end;
+	justify-content: end;
 	margin: 10px auto;
 }
 
-form div:first-of-type input {
-	flex:2;
-	margin-right:10px;
+form div:first-of-type div {
+	flex: 3;
+	margin:0;
 }
-form div:first-of-type button {
-	flex:1;
 
+form div:first-of-type input {
+	flex: 2;
+	margin:0;
+}
+
+form div:first-of-type button {
+	margin-left:5px;
 }
 </style>
+<<<<<<< HEAD
+<script src="${rootPath}/static/js/std_input_save.js?ver=2022-05-16-21"></script>
+<script src="${rootPath}/static/js/std_input.js?ver=2022-05-16-21"></script>
+=======
 <script>
 	const rootPath = "${rootPath}";
 </script>
 <script src="${rootPath}/static/js/std_input.js?ver=2022-05-10-017"></script>
 >>>>>>> ae373ae3259e4071ff920c5231ee0ea91045b5e1
+>>>>>>> 40232efce16720ffa9fdbf8d34237af595e50278
 <form method="POST">
 	<fieldset>
 		<legend>학생정보 등록</legend>
 		<div>
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 40232efce16720ffa9fdbf8d34237af595e50278
 			<label>학번</label>
 			<div>
 				<input type="text" name="st_num">
 				<button type="button" class="btn-green std-num-check">중복검사</button>
 			</div>
+<<<<<<< HEAD
+=======
 =======
 			<label>학번</label> <input type="text" name="st_num">
 			<button type="button" class="btn-green std-num-check">중복검사</button>
 >>>>>>> ae373ae3259e4071ff920c5231ee0ea91045b5e1
+>>>>>>> 40232efce16720ffa9fdbf8d34237af595e50278
 		</div>
 		<div>
 			<label>이름</label> <input type="text" name="st_name">
