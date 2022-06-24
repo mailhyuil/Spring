@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+ <mapper namespace="com.callor.memo.persistence.MemoDao">
+ 	<select id="selectAll" resultType="MemoVo">
+ 		SELECT * FROM tbl_memo
+ 	</select>
+ 	
+ 	<select id="findById" resultType="MemoVo">
+ 		SELECT * FROM tbl_memo
+ 		WHERE m_seq = #{m_seq}
+ 	</select>
+
+ 	<insert id="insert" parameterType="MemoVo">
+ 	<selectKey keyProperty="m_seq" resultType="Long" order="BEFORE">
+ 			SELECT memo_seq.NEXTVAL FROM DUAL	
+ 		</selectKey>
+ 		INSERT INTO tbl_memo(
+ 		        m_seq,
+		        m_author,	
+		        m_date,	
+		        m_time,	
+		        m_memo,		
+		        m_image	
+ 			) VALUES (
+ 		        #{m_seq},
+		        #{m_author},	
+		        #{m_date},	
+		        #{m_time},	
+		        #{m_memo},		
+		        #{m_image}	
+ 			)
+ 	</insert>
+ 	
+ 	<update id="update" parameterType="MemoVo">
+ 		UPDATE tbl_memo SET
+		        m_author = #{m_author},	
+		        m_date = #{m_date},	
+		        m_memo = #{m_memo},	
+		        m_image = #{m_image},		
+		        role = #{role}	
+ 		WHERE m_seq = #{m_seq}
+ 	</update>
+ 	
+ 	<delete id="delete">
+ 		DELETE FROM tbl_memo WHERE m_seq = #{m_seq}
+ 	</delete>
+ 	
+ <!--
+ 	<select id="create_memo_table">
+	 	CREATE TABLE tbl_users (
+		        username VARCHAR2(20)  PRIMARY KEY,
+		        password nVARCHAR2(125) NOT NULL,	
+		        email VARCHAR2(125)	NOT NULL UNIQUE,	
+		        name nVARCHAR2(125),	
+		        nickname nVARCHAR2(125),		
+		        role VARCHAR2(5)	
+		)
+ 	</select>
+   -->
+ </mapper> 
