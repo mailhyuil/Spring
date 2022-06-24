@@ -16,7 +16,7 @@
  	<insert id="insert" parameterType="MemoVo">
  	<selectKey keyProperty="m_seq" resultType="Long" order="BEFORE">
  			SELECT memo_seq.NEXTVAL FROM DUAL	
- 		</selectKey>
+ 	</selectKey>
  		INSERT INTO tbl_memo(
  		        m_seq,
 		        m_author,	

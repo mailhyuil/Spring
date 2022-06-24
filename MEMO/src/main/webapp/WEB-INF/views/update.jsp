@@ -16,12 +16,11 @@
 <body>
 <h1>수정하기</h1>
 <form:form modelAttribute="memoVO" enctype="multipart/form-data">
-	<form:input path="m_seq" value="${VO.m_seq }"/>
-	<form:input path="m_author" placeholder="m_author" value="${VO.m_author }"/>
-	<form:input path="m_date" placeholder="m_date" type="hidden"/>
-	<form:input path="m_time" placeholder="m_time" type="hidden"/>
-	<form:input path="m_memo" placeholder="m_memo" value="${VO.m_memo }"/>
-	<input type="file" name="up_file" value="${VO.m_image }" accept="image/*"/>
+
+	<form:input path="m_author" placeholder="m_author"/>
+
+	<form:textarea path="m_memo" placeholder="m_memo"></form:textarea>
+	<input type="file" name="up_file" accept="image/*"/>
 	<button>수정하기</button>
 </form:form>
 </body>

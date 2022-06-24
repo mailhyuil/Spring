@@ -19,7 +19,7 @@
 	<form:input path="m_author" placeholder="m_author"/>
 	<form:input path="m_date" placeholder="m_date" type="hidden"/>
 	<form:input path="m_time" placeholder="m_time" type="hidden"/>
-	<form:input path="m_memo" placeholder="m_memo"/>
+	<form:textarea path="m_memo" placeholder="m_memo"/>
 	<input type="file" name="up_file"/>
 	<button>추가</button>
 </form:form>

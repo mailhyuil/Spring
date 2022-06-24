@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.callor.memo.model.MemoVO;
@@ -22,6 +24,7 @@ import com.callor.memo.service.MemoService;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
+@SessionAttributes("memoVO")
 @Controller
 public class HomeController {
 	@Autowired
@@ -42,12 +45,12 @@ public class HomeController {
 	}
 
 	@RequestMapping(value = "/input", method = RequestMethod.POST)
-	public String input(Model model, @ModelAttribute("memoVO") MemoVO memoVO,@RequestParam("up_file") MultipartFile up_file) {
+	public String input(Model model, 
+			@ModelAttribute("memoVO") MemoVO memoVO,
+			@RequestParam("up_file") MultipartFile up_file,
+			SessionStatus status) {
 		log.debug(up_file.toString());
 		
-		Date date = new Date(System.currentTimeMillis());
-		SimpleDateFormat dayFormat = new SimpleDateFormat("yyyy-MM-dd");
-		SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm:ss");
 
 		try {
 			String fileName = fileupService.fileUp(up_file);
@@ -57,10 +60,9 @@ public class HomeController {
 			e.printStackTrace();
 		}
 
-
-		memoVO.setM_date(dayFormat.format(date));
-		memoVO.setM_time(timeFormat.format(date));
 		memoService.insert(memoVO);
+		
+		status.setComplete();
 		return "redirect:/";
 	}
 
@@ -73,15 +75,17 @@ public class HomeController {
 	}
 
 	@RequestMapping(value = "/update", method = RequestMethod.GET)
-	public String update(long id, Model model) {
-		MemoVO vo = memoService.findById(id);
-
-		model.addAttribute("VO", vo);
+	public String update(long id, @ModelAttribute("memoVO") MemoVO memoVO, Model model) {
+		memoVO = memoService.findById(id);
+		model.addAttribute("memoVO", memoVO);
 		return null;
 	}
 
 	@RequestMapping(value = "/update", method = RequestMethod.POST)
-	public String update(long id, Model model, @ModelAttribute MemoVO memoVO,@RequestParam("up_file") MultipartFile up_file) {
+	public String update(long id, Model model, 
+			@ModelAttribute("memoVO") MemoVO memoVO, 
+			@RequestParam("up_file") MultipartFile up_file,
+			SessionStatus status) {
 		log.debug(up_file.toString());
 		
 		Date date = new Date(System.currentTimeMillis());
@@ -100,6 +104,9 @@ public class HomeController {
 		memoVO.setM_date(dayFormat.format(date));
 		memoVO.setM_time(timeFormat.format(date));
 		memoService.update(memoVO);
+		
+		status.setComplete();
+		
 		return "redirect:/";
 	}
 
@@ -111,6 +118,13 @@ public class HomeController {
 	
 	@ModelAttribute("memoVO")
 	private MemoVO memoVO() {
-		return new MemoVO();
+		Date date = new Date(System.currentTimeMillis());
+		SimpleDateFormat dayFormat = new SimpleDateFormat("yyyy-MM-dd");
+		SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm:ss");
+//		memoVO.setM_date(dayFormat.format(date));
+//		memoVO.setM_time(timeFormat.format(date));
+		return MemoVO.builder().m_date(dayFormat.format(date))
+					.m_time(timeFormat.format(date))
+					.m_author("ddd").build();
 	}
 }

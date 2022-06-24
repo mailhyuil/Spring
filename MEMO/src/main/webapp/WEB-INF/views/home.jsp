@@ -14,6 +14,11 @@
 	const rootPath = "${rootPath}"
 </script>
 <title>Insert title here</title>
+<style>
+	.memo_content{
+		background-color:tomato;
+	}
+</style>
 </head>
 <body>
 	<h1>홈</h1>
@@ -30,7 +35,7 @@
 	</div>
 	<a href="${rootPath}/input">추가</a>
 </body>
-<script src="${rootPath }/static/js/detail.js?1332"></script>
+<script src="${rootPath }/static/js/detail.js?13ssss32"></script>
 </html>
 
 
