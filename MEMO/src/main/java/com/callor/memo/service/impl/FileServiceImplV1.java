@@ -16,25 +16,22 @@ public class FileServiceImplV1 implements FileUpService{
 
 	// project 폴더의 정보를 수집하기 위한 도구
 	private final ResourceLoader resLoader;
-	
+
 	public FileServiceImplV1(ResourceLoader resLoader) {
 		// TODO Auto-generated constructor stub
 		this.resLoader = resLoader;
 	}
-	
+
 	@Override
 	public String fileUp(MultipartFile file) throws Exception {
 		// TODO Auto-generated method stub
-<<<<<<< HEAD
-=======
-	
->>>>>>> 6af348449b33d62cc2a7a1dd7d9e505246078509
+
 		// 1. file 변수에 파일관련 정보가 있는지 검사
 		// 없으면 더이상 진행하지 말라
 		if(file == null) {
 			return null;
 		}
-		
+
 		// 2. 파일 저장할 폴더 정보 수집
 		// 프로젝트 폴더가 아니고 서버가 실행될때 서버의 폴더정보 가져오기
 		String upLoadPath = resLoader.getResource("/static/upload")
@@ -42,23 +39,22 @@ public class FileServiceImplV1 implements FileUpService{
 								.getPath();
 		
 		log.debug("업로드 폴더 {} ", upLoadPath);
-		
+
 		// 3. 업로드 할 파일이 이름 추출
 		String fileName = file.getOriginalFilename();
-		
+
 		// 4. 업로드할 폴더가 있는지 검사하여 없으면 생성하기
 		// java.io.File
-		File dir = new File(upLoadPath);
-		if( !dir.exists() ) {
-			// 4-1. 폴더 생성하기
-			dir.mkdirs();
-		}
-		
+		/*
+		 * File dir = new File(upLoadPath); if( !dir.exists() ) { // 4-1. 폴더 생성하기
+		 * dir.mkdirs(); }
+		 */
+
 		// 업로드 할 폴더와 파일이름을 묶어서 파일 정보 생성
 		File upLoadFile = new File(upLoadPath, fileName);
-		
+
 		file.transferTo(upLoadFile);
-		
+
 		return fileName;
 	}
 
@@ -66,7 +62,7 @@ public class FileServiceImplV1 implements FileUpService{
 	public boolean fileDelete(String filename) throws Exception {
 		return false;
 	}
-	
-	
-	
+
+
+
 }
