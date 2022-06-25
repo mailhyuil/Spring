@@ -45,33 +45,31 @@ public class HomeController {
 	}
 
 	@RequestMapping(value = "/input", method = RequestMethod.POST)
-	public String input(Model model, 
-			MemoVO memoVO,
-			@RequestParam("up_file") MultipartFile up_file,
+	public String input(Model model, MemoVO memoVO, @RequestParam("up_file") MultipartFile up_file,
 			SessionStatus status) {
 		try {
 			String fileName = fileupService.fileUp(up_file);
 			memoVO.setM_image(fileName);
-			
+
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		memoService.insert(memoVO);
-		
+
 		status.setComplete();
-		
+
 		return "redirect:/";
 	}
 
 	@RequestMapping(value = "/detail", method = RequestMethod.GET)
 	public String detail(long id, Model model) {
-		
+
 		MemoVO vo = memoService.findById(id);
-		
+
 		model.addAttribute("VO", vo);
-		
+
 		return null;
 	}
 
@@ -83,10 +81,9 @@ public class HomeController {
 	}
 
 	@RequestMapping(value = "/update", method = RequestMethod.POST)
-	public String update(long id, Model model, MemoVO memoVO, 
-			@RequestParam("up_file") MultipartFile up_file,
+	public String update(long id, Model model, MemoVO memoVO, @RequestParam("up_file") MultipartFile up_file,
 			SessionStatus status) {
-		
+
 		try {
 			String fileName = fileupService.fileUp(up_file);
 			memoVO.setM_image(fileName);
@@ -94,11 +91,11 @@ public class HomeController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		memoService.update(memoVO);
-		
+
 		status.setComplete();
-		
+
 		return "redirect:/";
 	}
 
@@ -107,14 +104,12 @@ public class HomeController {
 		memoService.delete(id);
 		return "redirect:/";
 	}
-	
+
 	@ModelAttribute("memoVO")
 	private MemoVO memoVO() {
 		Date date = new Date(System.currentTimeMillis());
 		SimpleDateFormat dayFormat = new SimpleDateFormat("yyyy-MM-dd");
 		SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm:ss");
-		return MemoVO.builder().m_date(dayFormat.format(date))
-					.m_time(timeFormat.format(date))
-					.build();
+		return MemoVO.builder().m_date(dayFormat.format(date)).m_time(timeFormat.format(date)).build();
 	}
 }
