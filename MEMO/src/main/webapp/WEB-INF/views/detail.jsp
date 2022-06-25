@@ -15,14 +15,14 @@
 </head>
 <body>
 	<h1>자세히보기</h1>
-	<h3>${VO.m_author}</h3>
-	<h4>${VO.m_date}</h4>
-	<h4>${VO.m_time}</h4>
-	<h1>${VO.m_memo}</h1>
-	<img src="${rootPath}/upload/${VO.m_image}" width="100px"
-		alt="${VO.m_image}">
-	<button onclick="location.href='${rootPath}/update?id=${VO.m_seq}';">수정하기</button>
-	<button onclick="location.href='${rootPath}/delete?id=${VO.m_seq}';">삭제하기</button>
+	<h3>${memoVO.m_author}</h3>
+	<h4>${memoVO.m_date}</h4>
+	<h4>${memoVO.m_time}</h4>
+	<h1>${memoVO.m_memo}</h1>
+	<img src="${rootPath}/upload/${memoVO.m_image}" width="100px"
+		alt="${memoVO.m_image}">
+	<button onclick="location.href='${rootPath}/update?id=${memoVO.m_seq}';">수정하기</button>
+	<button onclick="location.href='${rootPath}/delete?id=${memoVO.m_seq}';">삭제하기</button>
 	
 </html>
 

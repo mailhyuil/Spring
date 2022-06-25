@@ -12,7 +12,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Service
-public class FileServiceImplV1 implements FileUpService{
+public class FileServiceImplV1 implements FileUpService {
 
 	// project 폴더의 정보를 수집하기 위한 도구
 	private final ResourceLoader resLoader;
@@ -28,16 +28,14 @@ public class FileServiceImplV1 implements FileUpService{
 
 		// 1. file 변수에 파일관련 정보가 있는지 검사
 		// 없으면 더이상 진행하지 말라
-		if(file == null) {
+		if (file == null) {
 			return null;
 		}
 
 		// 2. 파일 저장할 폴더 정보 수집
 		// 프로젝트 폴더가 아니고 서버가 실행될때 서버의 폴더정보 가져오기
-		String upLoadPath = resLoader.getResource("/static/upload")
-								.getURI()
-								.getPath();
-		
+		String upLoadPath = resLoader.getResource("/static/upload").getURI().getPath();
+
 		log.debug("업로드 폴더 {} ", upLoadPath);
 
 		// 3. 업로드 할 파일이 이름 추출
@@ -62,7 +60,5 @@ public class FileServiceImplV1 implements FileUpService{
 	public boolean fileDelete(String filename) throws Exception {
 		return false;
 	}
-
-
 
 }

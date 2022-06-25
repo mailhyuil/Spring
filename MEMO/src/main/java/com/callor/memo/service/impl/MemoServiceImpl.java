@@ -10,11 +10,11 @@ import com.callor.memo.persistence.MemoDao;
 import com.callor.memo.service.MemoService;
 
 @Service
-public class MemoServiceImpl implements MemoService{
-	
+public class MemoServiceImpl implements MemoService {
+
 	@Autowired
 	private MemoDao memoDao;
-	
+
 	@Override
 	public List<MemoVO> selectAll() {
 		return memoDao.selectAll();

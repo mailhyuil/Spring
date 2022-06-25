@@ -68,15 +68,15 @@ public class HomeController {
 
 		MemoVO vo = memoService.findById(id);
 
-		model.addAttribute("VO", vo);
+		model.addAttribute("memoVO", vo);
 
 		return null;
 	}
 
 	@RequestMapping(value = "/update", method = RequestMethod.GET)
 	public String update(long id, @ModelAttribute("memoVO") MemoVO memoVO, Model model) {
-		memoVO = memoService.findById(id);
-		model.addAttribute("memoVO", memoVO);
+//		memoVO = memoService.findById(id);
+//		model.addAttribute("memoVO", memoVO);
 		return null;
 	}
 
