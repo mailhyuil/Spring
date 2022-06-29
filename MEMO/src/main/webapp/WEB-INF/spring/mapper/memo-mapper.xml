@@ -57,5 +57,6 @@
     m_memo VARCHAR(50) NOT NULL,		
     m_image VARCHAR(125)
 	)
+	</select>
 -->
  </mapper> 

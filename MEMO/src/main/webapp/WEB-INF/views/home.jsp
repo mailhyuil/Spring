@@ -31,5 +31,5 @@
 	</div>
 	<a href="${rootPath}/input">추가</a>
 </body>
-<script src="${rootPath }/static/js/detail.js?13ssss32"></script>
+<script src="${rootPath }/static/js/detail.js?13sddsss32"></script>
 </html>

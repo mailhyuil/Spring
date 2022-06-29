@@ -37,7 +37,7 @@ public class FileServiceImplV1 implements FileUpService{
 		
 		// 2. 파일 저장할 폴더 정보 수집
 		// 프로젝트 폴더가 아니고 서버가 실행될때 서버의 폴더정보 가져오기
-		String upLoadPath = resLoader.getResource("/static/upload")
+		String upLoadPath =resLoader.getResource("/static/upload")
 								.getURI()
 								.getPath();
 		log.debug("업로드 폴더 {} ", upLoadPath);

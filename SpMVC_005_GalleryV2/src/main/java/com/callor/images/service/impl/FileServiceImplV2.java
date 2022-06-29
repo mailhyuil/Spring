@@ -40,6 +40,7 @@ public class FileServiceImplV2 implements FileUpService{
 		
 		String fileName = file.getOriginalFilename();
 		
+		
 		/*
 		 * 파일 업로드를 할때 원래 파일이름을 그대로 저장하면
 		 * 해킹등의 위협에 노출될수 있다
@@ -63,7 +64,7 @@ public class FileServiceImplV2 implements FileUpService{
 	public List<FilesVO> filesUp(MultipartHttpServletRequest files) throws Exception {
 	
 		// 업로드된 여러개의 파일정보를 fileList 에 담기
-		List<MultipartFile> fileList = files.getFiles("mFile");
+		List<MultipartFile> fileList = files.getFiles("mFile"); // jsp input name=mFile
 		
 		// DB insert 하기 위한 리스트를 만들기위하여 생성
 		List<FilesVO> retFiles = new ArrayList<>();
@@ -75,6 +76,7 @@ public class FileServiceImplV2 implements FileUpService{
 		// 원래파일이름과 uuID 가 부착된 파일이름으로 FilesVO를 생성하고
 		// retFiles 에 추가하기	
 		for(MultipartFile file : fileList) {
+			
 			String originName = file.getOriginalFilename();
 			String uuName = this.fileUp(file);
 			
@@ -82,9 +84,11 @@ public class FileServiceImplV2 implements FileUpService{
 							.i_originalName(originName)
 							.i_imageName(uuName)
 							.build();
+			
 			retFiles.add(fileVO);
 		}
 		return retFiles;
+		
 	}
 
 	@Override

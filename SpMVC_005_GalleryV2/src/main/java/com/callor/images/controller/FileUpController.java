@@ -45,22 +45,7 @@ public class FileUpController {
 	}
 	
 	@RequestMapping(value="/fileups",method=RequestMethod.POST)
-<<<<<<< HEAD
-	public String upFiles(@ModelAttribute("bbsVO") BBsVO bbsVO,	MultipartHttpServletRequest mFiles,	Model model) {
-=======
-	public String upFiles(
-			
-			@ModelAttribute("bbsVO")
-			BBsVO bbsVO, 
-			MultipartHttpServletRequest mFiles, 
-			
-<<<<<<< HEAD
-			Model mode) {
-=======
-			Model model) {
->>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
-		
->>>>>>> 6af348449b33d62cc2a7a1dd7d9e505246078509
+	public String upFiles(@ModelAttribute("bbsVO") BBsVO bbsVO, MultipartHttpServletRequest mFiles, Model mode) {
 			bbsService.insertBbsAndFiles(bbsVO, mFiles);
 		return null;
 	}

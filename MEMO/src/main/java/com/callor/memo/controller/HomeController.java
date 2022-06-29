@@ -7,7 +7,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,15 +32,16 @@ public class HomeController {
 	private FileUpService fileupService;
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Model model) {
+	public String home(Model model, SessionStatus status) {
 		List<MemoVO> list = memoService.selectAll();
 		model.addAttribute("LIST", list);
+		status.setComplete();
 		return "home";
 	}
 
 	@RequestMapping(value = "/input", method = RequestMethod.GET)
-	public String input(@ModelAttribute("memoVO") MemoVO memoVO) {
-		return null;
+	public String input() {
+		return "/input";
 	}
 
 	@RequestMapping(value = "/input", method = RequestMethod.POST)
@@ -63,25 +63,25 @@ public class HomeController {
 		return "redirect:/";
 	}
 
-	@RequestMapping(value = "/detail", method = RequestMethod.GET)
-	public String detail(long id, Model model) {
+	@RequestMapping(value = "/detail/{id}", method = RequestMethod.GET)
+	public String detail(@PathVariable("id") long id, Model model) {
 
 		MemoVO vo = memoService.findById(id);
 
 		model.addAttribute("memoVO", vo);
 
-		return null;
+		return "/detail";
 	}
 
 	@RequestMapping(value = "/update", method = RequestMethod.GET)
-	public String update(long id, @ModelAttribute("memoVO") MemoVO memoVO, Model model) {
+	public String update(@ModelAttribute("memoVO") MemoVO memoVO, Model model) {
 //		memoVO = memoService.findById(id);
 //		model.addAttribute("memoVO", memoVO);
-		return null;
+		return "/input";
 	}
 
 	@RequestMapping(value = "/update", method = RequestMethod.POST)
-	public String update(long id, Model model, MemoVO memoVO, @RequestParam("up_file") MultipartFile up_file,
+	public String update(Model model, MemoVO memoVO, @RequestParam("up_file") MultipartFile up_file,
 			SessionStatus status) {
 
 		try {
