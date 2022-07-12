@@ -34,7 +34,6 @@ public class HomeController {
 			List<MemoDTO> memos = memoService.findByAuthor(username);
 			model.addAttribute("MEMOS", memos);
 		}
-		
 		return "home";
 	}
 	

@@ -36,11 +36,7 @@ public class AcademyServiceImpl implements AcademyService {
 		HttpURLConnection httpCon = null;
 		Scanner scanner = null;
 		try {
-<<<<<<< HEAD
 			url = new URL(
-=======
-			url = new URL( 
->>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 					"https://open.neis.go.kr/hub/acaInsTiInfo?KEY=ebd806fdca3043fa9fcd0c65ee839914&Type=json&pIndex=1&pSize=100&ATPT_OFCDC_SC_CODE=T10");
 			httpCon = (HttpURLConnection) url.openConnection();
 
@@ -81,10 +77,6 @@ public class AcademyServiceImpl implements AcademyService {
 		URL url = null;
 		HttpURLConnection httpCon = null;
 		try {
-<<<<<<< HEAD
-
-=======
->>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 			url = new URL("https://yts.mx/api/v2/list_movies.json?minimum_rating=8&sort_by=year/");
 			httpCon = (HttpURLConnection) url.openConnection();
 
@@ -127,10 +119,7 @@ public class AcademyServiceImpl implements AcademyService {
 	public Object restTemplate() {
 		URI uri = null;
 		try {
-<<<<<<< HEAD
-//https://open.neis.go.kr/hub/acaInsTiInfo?KEY=ebd806fdca3043fa9fcd0c65ee839914&Type=json&pIndex=1&pSize=100&ATPT_OFCDC_SC_CODE=T10
-=======
->>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
+			//https://open.neis.go.kr/hub/acaInsTiInfo?KEY=ebd806fdca3043fa9fcd0c65ee839914&Type=json&pIndex=1&pSize=100&ATPT_OFCDC_SC_CODE=T10
 			uri = new URI(
 					"https://open.neis.go.kr/hub/acaInsTiInfo?KEY=ebd806fdca3043fa9fcd0c65ee839914&Type=json&pIndex=1&pSize=100&ATPT_OFCDC_SC_CODE=T10");
 		} catch (Exception e) {
@@ -145,18 +134,16 @@ public class AcademyServiceImpl implements AcademyService {
 
 		RestTemplate restTemplate = new RestTemplate();
 
-<<<<<<< HEAD
 		ResponseEntity<String> respEntity = restTemplate.exchange(
 				uri, 
 				HttpMethod.GET, 
 				null,
 				String.class);
-=======
-		ResponseEntity<String> respEntity = restTemplate.exchange(uri, HttpMethod.GET, null,
-				new ParameterizedTypeReference<String>() {
-				});
->>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
-
+		
+		/*
+		 * ResponseEntity<String> respEntity = restTemplate.exchange(uri,
+		 * HttpMethod.GET, null, new ParameterizedTypeReference<String>() { });
+		 */
 		System.out.println("=".repeat(100));
 		System.out.println(respEntity.getBody());
 		System.out.println("=".repeat(100));

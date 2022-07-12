@@ -1,5 +1,10 @@
 package com.sb.api.controller;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -17,10 +22,15 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.sb.api.model.AcademyVO;
 import com.sb.api.service.impl.AcademyServiceImpl;
 
 import lombok.extern.slf4j.Slf4j;
+
+/*
+ * /api/src/main/webapp/WEB-INF/views
+ * /api/src/main/java/com/sb/api/controller/MapController.java
+ * /api/src/main/resources/log4j.xml
+ */
 
 @Slf4j
 @Controller
@@ -29,9 +39,27 @@ public class HomeController {
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Model model) {
-//		Object vo = service.URLCallScanner();
-//		model.addAttribute("VO", vo);
-		service.restTemplate();
+		File note = new File("C:/Users/sangb/Desktop/Spring/api/target/classes/hello.txt");
+		// Resource
+		// ResourceLoader
+		try {
+			Scanner scan =  new Scanner(System.in);
+			if(!note.exists()) {
+				note.createNewFile();				
+			}
+			
+			BufferedWriter writer = new BufferedWriter(new FileWriter(note));
+			
+			writer.write("heelow!!");
+			
+			writer.close();
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+			
+
 		return "home";
 	}
 

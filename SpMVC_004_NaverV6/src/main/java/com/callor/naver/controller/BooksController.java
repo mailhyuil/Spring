@@ -34,7 +34,7 @@ public class BooksController {
 		/*
 		 * return "문자열" 형식은
 		 * 명시적으로 어떤 jsp 파일을 rendering 할 것인지
-		 * 알려주는 것이다
+		  알려주는 것이다
 		 * 현재 method 를 요청한 URL 에 대하여 jsp 을 
 		 * 명시적으로 전달한다
 		 */

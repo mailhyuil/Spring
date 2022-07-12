@@ -34,7 +34,6 @@ public class MemoServiceImplV1 implements MemoService{
 
 	@Override
 	public int insertAndUpdate(MemoDTO memo, MultipartFile file) {
-		// TODO Auto-generated method stub
 		// insert(새로추가)가 되는 경우는 m_seq 가 0 일 것이고
 		// Update(수정)가 되는 경우는 m_seq 가 0 이 아닐 것이다
 		long m_seq = memo.getM_seq();
@@ -44,6 +43,9 @@ public class MemoServiceImplV1 implements MemoService{
 			// 먼저 seq 값으로 table 에서 데이터를 가져오고
 			MemoDTO updateMemo = memoDao.findById(m_seq);
 			
+			if(updateMemo.getM_image() == null) {
+				updateMemo.setM_image("");
+			}
 			// 저장된 파일 이름을 가져오기
 			String fileName = updateMemo.getM_image();
 			
@@ -52,7 +54,7 @@ public class MemoServiceImplV1 implements MemoService{
 				// 기존의 파일을 삭제하고
 				fileUp.fileDelete(updateMemo.getM_up_image());
 			}
-		
+			
 			// 파일을 업로드 하고
 			// 업로드된 파일 이름 가져오기
 			String upLoadFileName = fileUp.fileUp(file);

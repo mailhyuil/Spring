@@ -11,15 +11,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <title>Insert title here</title>
-<link rel="stylesheet" href="${rootPath }/static/css/home.css?asdfa2fdd2sdf"/>
+<link rel="stylesheet" href="${rootPath }/static/css/home.css?asdfda2sdffdd2sdf"/>
 <script>
 	const rootPath = "${rootPath}"
 </script>
-<script src="${rootPath}/static/memo.js?20220dssd62ssssdfs7002"></script>
+<script src="${rootPath}/static/memo.js?20220dssd62sssssdfs7002"></script>
 </head>
 <body>
-
-    </div>
 	<c:if test="${empty USERNAME }">
 	<h1>로그인을 해주세요!</h1>
 	</c:if>
@@ -46,20 +44,20 @@
 					<td>${MEMO.m_date}</td>
 					<td>${MEMO.m_time}</td>
 					<td>${MEMO.m_memo}</td>
-					<td class="delete-btn">&times;</td>
+					<td class="delete-btn">삭제</td>
 				</tr>
 			</c:forEach>
 		</tbody>	
 	</table>
 	<div class="btn">
 		<a href="${rootPath}/memo/insert">WRITE</a>
-		<a href="${rootPath}/memo/trashcan">TRASHCAN</a>
 		<c:if test="${empty USERNAME}">
 			<a href="${rootPath}/user/login">LOGIN</a>
 		</c:if>
 		<c:if test="${not empty USERNAME}">
 			<a href="${rootPath}/user/logout">LOGOUT</a>
 		</c:if>
+		<a href="${rootPath}/memo/trashcan">TRASHCAN</a>
 	</div>
 </body>
 </html>

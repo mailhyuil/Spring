@@ -70,11 +70,7 @@ public class NaverServiceImplV2 extends NaverServiceImpl {
 		headers.setAccept(
 				Collections.singletonList(
 						MediaType.APPLICATION_XML));
-<<<<<<< HEAD
 
-=======
-		
->>>>>>> fe74c4c98396f8694bf1545e993fe0cda96341bc
 		// headers 에 추가된 정보를 Entity type 의 객체로 변환하기
 		HttpEntity<String> entity 
 		= new HttpEntity<String>("parameter",headers);

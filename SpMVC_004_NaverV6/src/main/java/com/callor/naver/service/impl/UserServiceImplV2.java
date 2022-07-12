@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.callor.naver.config.BCryptPasswordEncoder2;
 import com.callor.naver.config.QualifierConfig;
 import com.callor.naver.model.UserVO;
 
@@ -24,9 +25,13 @@ import lombok.extern.slf4j.Slf4j;
 @Service(QualifierConfig.SERVICE.USER_V2)
 public class UserServiceImplV2 extends UserServiceImplV1{
 
-	@Autowired
+
 	protected PasswordEncoder passwordEncoder;
 	
+	public UserServiceImplV2(PasswordEncoder passwordEncoder) {
+		this.passwordEncoder = new BCryptPasswordEncoder2(2);
+	}
+
 	@Override
 	public int join(UserVO userVO) {
 		

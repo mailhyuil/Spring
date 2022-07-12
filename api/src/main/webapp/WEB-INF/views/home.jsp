@@ -9,6 +9,5 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>${VO.FA_RDNMA }</h1>
 </body>
 </html>
