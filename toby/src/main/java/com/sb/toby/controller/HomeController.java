@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.sb.toby.Level;
 import com.sb.toby.factory.BirdFactory;
 import com.sb.toby.inter.Bird;
 
@@ -16,10 +17,13 @@ public class HomeController {
 	public String home(Locale locale, Model model) {
 		return "home";
 	}
-	
+
 	public static void main(String[] args) {
 		Bird duck = BirdFactory.createBird("duck");
 		duck.sing();
 		duck.fly();
+		
+		System.out.println(Level.GOLD.getName());
+		
 	}
 }
