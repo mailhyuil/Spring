@@ -4,14 +4,14 @@ import com.sb.toby.inter.Bird;
 import com.sb.toby.inter.FlyBehavior;
 import com.sb.toby.inter.SingBehavior;
 
-// template callback pattern
+// template-callback pattern
 public class Duck implements Bird{
 
 	@Override
 	public void sing() {
 		System.out.println("노래시작!");
 		
-		new SingBehavior() {
+		new SingBehavior() { // 내부 익명클래스
 			@Override
 			public void sing() {
 				System.out.println("아름답게 노래부르는 중 ...");
@@ -26,7 +26,7 @@ public class Duck implements Bird{
 	public void fly() {
 		System.out.println("날 준비!");
 		
-		new FlyBehavior() {
+		new FlyBehavior() { // 내부 익명클래스
 			@Override
 			public void fly() {
 				System.out.println("못날아 ㅠㅠ");
